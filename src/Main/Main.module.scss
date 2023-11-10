@@ -1,0 +1,41 @@
+.starship{
+	border-bottom: 1px double green;
+	cursor: pointer;
+	p{
+		padding-top: 5px ;
+	}
+}
+
+.name{
+font-weight: 800;
+}
+
+.disabled{
+	pointer-events: none;
+	color: grey;
+}
+
+.container{
+	margin: 0 30px;
+	min-width: 500px;
+}
+
+.more{
+	display: block;
+	padding: 5px 0;
+}
+
+.nav{
+	margin: 20px auto;
+	width: min-content;
+display: flex;
+font-size: 16px;
+gap: 10px;
+
+	a{display: block;}
+}
+
+.main{
+	display: flex;
+	justify-content: center;
+}
