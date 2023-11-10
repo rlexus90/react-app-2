@@ -13,6 +13,7 @@ function App() {
   });
   const [starShips, setStarships] = useState<Starship[]>();
   const [dataResp, setDataResp] = useState<StarshipsRequest | undefined>();
+  console.log('ff');
 
   const buttonClick = async () => {
     let resp: StarshipsRequest | undefined;
