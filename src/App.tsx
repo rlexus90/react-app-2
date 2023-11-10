@@ -2,8 +2,7 @@ import { useState } from 'react';
 import './App.scss';
 import Header from './ViewComponent/Header/Header';
 import Main from './ViewComponent/Main/Main';
-import APIResponce from './controller/APIResponse';
-import { Starship, StarshipsRequest } from './types/types';
+import { RequestAns } from './types/types';
 
 function App() {
   const [searchValue, setSearchValue] = useState(() => {
@@ -11,45 +10,21 @@ function App() {
     if (loadFromStorage) return loadFromStorage;
     return '';
   });
-  const [starShips, setStarships] = useState<Starship[]>();
-  const [dataResp, setDataResp] = useState<StarshipsRequest | undefined>();
-
-  const buttonClick = async () => {
-    let resp: StarshipsRequest | undefined;
-    saveSearchValue();
-    if (searchValue) {
-      resp = await APIResponce.getSearchShips(searchValue);
-    } else {
-      resp = await APIResponce.getAllShips();
-    }
-    if (resp) {
-      setStarships(resp.results);
-    }
-    setDataResp(resp);
-  };
-
-  const onChangeHandler = (event: { target: { value: string } }) => {
-    const { value } = event.target;
-    setSearchValue(value);
-  };
-
-  const saveSearchValue = () => {
-    if (searchValue) localStorage.setItem('searchValue', searchValue);
-  };
+  const [filmResp, setFilmResp] = useState<RequestAns | undefined>();
 
   return (
     <>
       <Header
         searchValue={searchValue}
-        buttonClick={buttonClick}
-        onChangeHandler={onChangeHandler}
+        setFilmResp={setFilmResp}
+        setSearchValue={setSearchValue}
       ></Header>
 
-      <Main
+      {/* <Main
         starShips={starShips}
         dataResp={dataResp}
         setDataResp={setDataResp}
-      ></Main>
+      ></Main> */}
     </>
   );
 }

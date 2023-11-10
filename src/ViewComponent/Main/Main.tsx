@@ -11,25 +11,25 @@ export default function Main(props: {
 }) {
   const data = props.dataResp;
 
-  const currentPage = data
-    ? !data.previous
-      ? '1'
-      : Number(data.previous?.split('=').slice(-1)) + 1
-    : '';
+  // const currentPage = data
+  //   ? !data.previous
+  //     ? '1'
+  //     : Number(data.previous?.split('=').slice(-1)) + 1
+  //   : '';
 
-  const prewPage = async (event: SyntheticEvent) => {
-    event.preventDefault();
-    if (!props.dataResp?.previous) return;
-    const resp = await APIResponce.getShipFromPage(props.dataResp.previous);
-    if (resp) props.setDataResp(resp) as void;
-  };
+  // const prewPage = async (event: SyntheticEvent) => {
+  //   event.preventDefault();
+  //   if (!props.dataResp?.previous) return;
+  //   const resp = await APIResponce.getShipFromPage(props.dataResp.previous);
+  //   if (resp) props.setDataResp(resp) as void;
+  // };
 
-  const nextPage = async (event: SyntheticEvent) => {
-    event.preventDefault();
-    if (!props.dataResp?.next) return;
-    const resp = await APIResponce.getShipFromPage(props.dataResp.next);
-    if (resp) props.setDataResp(resp) as void;
-  };
+  // const nextPage = async (event: SyntheticEvent) => {
+  //   event.preventDefault();
+  //   if (!props.dataResp?.next) return;
+  //   const resp = await APIResponce.getShipFromPage(props.dataResp.next);
+  //   if (resp) props.setDataResp(resp) as void;
+  // };
 
   return (
     <div className={style.main}>

@@ -1,21 +1,44 @@
-import { ChangeEventHandler, MouseEventHandler } from 'react';
+import { Dispatch } from 'react';
 import styles from './Header.module.scss';
+import { RequestAns } from '../../types/types';
+import APIResponce from '../../controller/APIResponse';
 
-function Header(props: {
+type HeaderProps = {
   searchValue: string;
-  onChangeHandler: ChangeEventHandler<HTMLInputElement>;
-  buttonClick: MouseEventHandler<HTMLButtonElement>;
-}) {
+  setFilmResp: Dispatch<RequestAns | undefined>;
+  setSearchValue: Dispatch<string>;
+};
+
+function Header({ searchValue, setFilmResp, setSearchValue }: HeaderProps) {
+  const saveSearchValue = () => {
+    if (searchValue) localStorage.setItem('searchValue', searchValue);
+  };
+
+  const onChangeHandler = (event: { target: { value: string } }) => {
+    const { value } = event.target;
+    setSearchValue(value);
+  };
+
+  const buttonClick = async () => {
+    let resp: RequestAns | undefined;
+    saveSearchValue();
+    if (searchValue) {
+      resp = await APIResponce.getSearchMovie(searchValue);
+    } else {
+      resp = await APIResponce.getMoviePage();
+    }
+    setFilmResp(resp);
+  };
   return (
     <div className="header">
       <div className={styles.wrapper}>
         <input
           type="text"
           className={styles.search}
-          value={props.searchValue}
-          onChange={props.onChangeHandler}
+          value={searchValue}
+          onChange={onChangeHandler}
         />
-        <button className={styles.btn} onClick={props.buttonClick}>
+        <button className={styles.btn} onClick={buttonClick}>
           Search
         </button>
       </div>
