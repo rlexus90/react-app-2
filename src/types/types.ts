@@ -46,3 +46,9 @@ export interface Film {
     __typename?: string;
   };
 }
+
+export interface RespParam {
+  searchValue?: string;
+  page?: string;
+  limit?: string;
+}

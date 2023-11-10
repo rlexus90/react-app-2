@@ -1,32 +1,28 @@
 import { Dispatch } from 'react';
 import styles from './Header.module.scss';
-import { RequestAns } from '../../types/types';
-import APIResponce from '../../controller/APIResponse';
+import { RequestAns, RespParam } from '../../types/types';
+import { queryToAPI } from '../../utils/utils';
 
 type HeaderProps = {
-  searchValue: string;
+  respParam: RespParam;
   setFilmResp: Dispatch<RequestAns | undefined>;
-  setSearchValue: Dispatch<string>;
+  setRespParam: Dispatch<RespParam>;
 };
 
-function Header({ searchValue, setFilmResp, setSearchValue }: HeaderProps) {
+function Header({ respParam, setFilmResp, setRespParam }: HeaderProps) {
   const saveSearchValue = () => {
-    if (searchValue) localStorage.setItem('searchValue', searchValue);
+    if (respParam?.searchValue)
+      localStorage.setItem('searchValue', respParam.searchValue);
   };
 
   const onChangeHandler = (event: { target: { value: string } }) => {
     const { value } = event.target;
-    setSearchValue(value);
+    setRespParam({ ...respParam, searchValue: value });
   };
 
   const buttonClick = async () => {
-    let resp: RequestAns | undefined;
+    const resp = await queryToAPI(respParam);
     saveSearchValue();
-    if (searchValue) {
-      resp = await APIResponce.getSearchMovie(searchValue);
-    } else {
-      resp = await APIResponce.getMoviePage();
-    }
     setFilmResp(resp);
   };
   return (
@@ -35,7 +31,7 @@ function Header({ searchValue, setFilmResp, setSearchValue }: HeaderProps) {
         <input
           type="text"
           className={styles.search}
-          value={searchValue}
+          value={respParam.searchValue}
           onChange={onChangeHandler}
         />
         <button className={styles.btn} onClick={buttonClick}>

@@ -1,41 +1,45 @@
-import { Link, Outlet } from 'react-router-dom';
-import { Starship, StarshipsRequest } from '../../types/types';
+import { Outlet } from 'react-router-dom';
+import { RequestAns, RespParam } from '../../types/types';
 import style from './Main.module.scss';
-import { SyntheticEvent } from 'react';
-import APIResponce from '../../controller/APIResponse';
+import { Dispatch, SyntheticEvent } from 'react';
+import { queryToAPI } from '../../utils/utils';
 
-export default function Main(props: {
-  starShips: Starship[] | undefined;
-  dataResp: StarshipsRequest | undefined;
-  setDataResp(a: StarshipsRequest): void;
-}) {
-  const data = props.dataResp;
+type MainProps = {
+  filmResp: RequestAns | undefined;
+  setFilmResp: Dispatch<RequestAns | undefined>;
+  respParam: RespParam;
+};
 
-  // const currentPage = data
-  //   ? !data.previous
-  //     ? '1'
-  //     : Number(data.previous?.split('=').slice(-1)) + 1
-  //   : '';
+export default function Main({ filmResp, setFilmResp, respParam }: MainProps) {
+  const currentPage = filmResp ? filmResp.page : '';
 
-  // const prewPage = async (event: SyntheticEvent) => {
-  //   event.preventDefault();
-  //   if (!props.dataResp?.previous) return;
-  //   const resp = await APIResponce.getShipFromPage(props.dataResp.previous);
-  //   if (resp) props.setDataResp(resp) as void;
-  // };
+  const prewPage = async (event: SyntheticEvent) => {
+    event.preventDefault();
+    if (filmResp?.page === 1 || !filmResp?.page) return;
+    const page = await queryToAPI({
+      ...respParam,
+      page: String(filmResp?.page - 1),
+    });
+    if (page) setFilmResp(page);
+    console.log(page);
+  };
 
-  // const nextPage = async (event: SyntheticEvent) => {
-  //   event.preventDefault();
-  //   if (!props.dataResp?.next) return;
-  //   const resp = await APIResponce.getShipFromPage(props.dataResp.next);
-  //   if (resp) props.setDataResp(resp) as void;
-  // };
+  const nextPage = async (event: SyntheticEvent) => {
+    event.preventDefault();
+    if (!filmResp?.next) return;
+    const page = await queryToAPI({
+      ...respParam,
+      page: String(+filmResp.page + 1),
+    });
+    if (page) setFilmResp(page);
+    console.log(page);
+  };
 
   return (
     <div className={style.main}>
       <div className={style.container}>
         <ul>
-          {data?.results.map((el) => {
+          {/* {data?.results.map((el) => {
             const id = +el.url.split('/').slice(-2, -1);
 
             return (
@@ -47,12 +51,12 @@ export default function Main(props: {
                 </Link>
               </li>
             );
-          })}
+          })} */}
         </ul>
         <nav className={style.nav}>
           <a
             href="#"
-            className={!props.dataResp?.previous ? style.disabled : ' '}
+            className={filmResp?.page == 1 ? style.disabled : ' '}
             onClick={prewPage}
           >
             prew
@@ -60,7 +64,7 @@ export default function Main(props: {
           <p>{currentPage}</p>
           <a
             href="#"
-            className={!props.dataResp?.next ? style.disabled : ' '}
+            className={!filmResp?.next ? style.disabled : ' '}
             onClick={nextPage}
           >
             next
