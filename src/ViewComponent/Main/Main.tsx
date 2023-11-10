@@ -1,8 +1,8 @@
 import { Link, Outlet } from 'react-router-dom';
-import { Starship, StarshipsRequest } from '../types/types';
+import { Starship, StarshipsRequest } from '../../types/types';
 import style from './Main.module.scss';
 import { SyntheticEvent } from 'react';
-import APIResponce from '../controller/APIResponse';
+import APIResponce from '../../controller/APIResponse';
 
 export default function Main(props: {
   starShips: Starship[] | undefined;

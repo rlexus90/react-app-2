@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.scss';
-import Header from './Header/Header';
-import Main from './Main/Main';
+import Header from './ViewComponent/Header/Header';
+import Main from './ViewComponent/Main/Main';
 import APIResponce from './controller/APIResponse';
 import { Starship, StarshipsRequest } from './types/types';
 

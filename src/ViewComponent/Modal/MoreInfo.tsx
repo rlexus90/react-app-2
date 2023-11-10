@@ -1,5 +1,5 @@
 import { useLoaderData, Navigate } from 'react-router-dom';
-import { Starship } from '../types/types';
+import { Starship } from '../../types/types';
 import styles from './MoreInfo.module.scss';
 
 export default function MoreInfo() {

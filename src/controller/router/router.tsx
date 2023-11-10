@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import App from '../App';
-import NotFound from '../NotFound/NotFound';
-import MoreInfo from '../Modal/MoreInfo';
-import APIResponce from '../controller/APIResponse';
+import App from '../../App';
+import NotFound from '../../ViewComponent/NotFound/NotFound';
+import MoreInfo from '../../ViewComponent/Modal/MoreInfo';
+import APIResponce from '../APIResponse';
 
 const router = createBrowserRouter([
   {
