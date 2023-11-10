@@ -7,8 +7,8 @@ import { Starship, StarshipsRequest } from './types/types';
 
 function App() {
   const [searchValue, setSearchValue] = useState(() => {
-const loadFromStorage = localStorage.getItem('searchValue');
-    					if (loadFromStorage) return loadFromStorage;
+    const loadFromStorage = localStorage.getItem('searchValue');
+    if (loadFromStorage) return loadFromStorage;
     return '';
   });
   const [starShips, setStarships] = useState<Starship[]>();
