@@ -6,9 +6,9 @@ import APIResponce from './controller/APIResponse';
 import { Starship, StarshipsRequest } from './types/types';
 
 function App() {
-  const [searchValue, setSearchValue]=useState(() => {
+  const [searchValue, setSearchValue] = useState(() => {
     const loadFromStorage = localStorage.getItem('searchValue');
-if (loadFromStorage) return loadFromStorage;
+    if (loadFromStorage) return loadFromStorage;
     return '';
   });
   const [starShips, setStarships] = useState<Starship[]>();
