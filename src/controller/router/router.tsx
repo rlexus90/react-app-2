@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         element: <MoreInfo />,
         loader: (params) => {
           if (params.params.id) {
-            const data = APIResponce.getShip(params.params.id);
+            const data = APIResponce.getMovie(params.params.id);
             return data;
           }
           return null;

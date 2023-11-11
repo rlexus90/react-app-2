@@ -8,7 +8,7 @@ export interface RequestAns {
 export interface Film {
   _id: string;
   id: string;
-  primaryImage: {
+  primaryImage?: {
     id: string;
     width: number;
     height: number;

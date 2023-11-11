@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 import Header from './ViewComponent/Header/Header';
 import Main from './ViewComponent/Main/Main';
 import { RequestAns, RespParam } from './types/types';
 import ErrorBoundary from './component/ErrorBoundary/ErrorBoundary';
+import { queryToAPI } from './utils/utils';
 
 function App() {
   const [respParam, setRespParam] = useState((): RespParam => {
@@ -12,6 +13,13 @@ function App() {
     return { page: '1', limit: '10' };
   });
   const [filmResp, setFilmResp] = useState<RequestAns | undefined>();
+
+  useEffect(() => {
+    (async () => {
+      const firstLoad = await queryToAPI(respParam);
+      setFilmResp(firstLoad);
+    })();
+  }, []);
 
   return (
     <>

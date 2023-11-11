@@ -44,9 +44,11 @@ export default class APIResponce {
     }
   }
 
-  static async getShip(id: string): Promise<RequestAns | undefined> {
+  static async getMovie(id: string): Promise<RequestAns | undefined> {
     try {
-      const request = await axios.get(`${REQUEST_URL}/${id}`);
+      const request = await axios.get(`${REQUEST_URL}/${id}`, {
+        headers: HEADERS,
+      });
       const data = await request.data;
       return data;
     } catch (e) {

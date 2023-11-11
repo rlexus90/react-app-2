@@ -1,46 +1,32 @@
-import { useLoaderData, Navigate } from 'react-router-dom';
-import { Starship } from '../../types/types';
+import { Navigate, useLoaderData, useNavigate } from 'react-router-dom';
 import styles from './MoreInfo.module.scss';
+import { Film, RequestAns } from '../../types/types';
+import noImg from '/no_image.jpg';
 
 export default function MoreInfo() {
-  const data = useLoaderData() as Starship;
+  const data = useLoaderData() as RequestAns;
+  const film = data.results as unknown as Film;
+  const navigate = useNavigate();
 
-  if (!data) return <Navigate to="*" />;
+  if (!film) return <Navigate to="*" />;
+
+  const returnBack = () => {
+    navigate('/');
+  };
 
   return (
-    <div className={styles.modal}>
-      <p className="name">
-        <b>Name - </b>
-        {data.name}
-      </p>
-      <p className="model">
-        <b>Model - </b>
-        {data.model}
-      </p>
-      <p className="starship-class">
-        <b>Starship class - </b>
-        {data.starship_class}
-      </p>
-      <p className="manufacturer">
-        <b>Manufacturer - </b>
-        {data.manufacturer}
-      </p>
-      <p className="max-speed">
-        <b>Max speed - </b>
-        {data.max_atmosphering_speed}
-      </p>
-      <p>
-        <b>Lenght - </b>
-        {data.length}
-      </p>
-      <p>
-        <b>Capacity - </b>
-        {data.cargo_capacity}
-      </p>
-      <p>
-        <b>Passegers - </b>
-        {data.passengers}
-      </p>
+    <div className={styles.modal} onClick={returnBack}>
+      <div className={styles.wrapper}>
+        <img
+          className={styles.image}
+          src={film.primaryImage ? film.primaryImage.url : noImg}
+          alt={
+            film.primaryImage ? film.primaryImage.caption.plainText : 'No Image'
+          }
+        />
+        <p>{film.originalTitleText.text}</p>
+        <p>Year: {film.releaseYear?.year}</p>
+      </div>
     </div>
   );
 }
