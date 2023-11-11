@@ -26,12 +26,13 @@
   // flex: 0 0 1000px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 0 10px;
   max-width: 1000px;
 }
 
 .wrapper {
-  flex-basis: calc(100vw * 2 / 3);
+  flex-basis: calc(100vw * 0.6);
   // flex: 0 0 1030px;
 }
 

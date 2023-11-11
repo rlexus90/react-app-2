@@ -9,9 +9,15 @@ type MainProps = {
   filmResp: RequestAns | undefined;
   setFilmResp: Dispatch<RequestAns | undefined>;
   respParam: RespParam;
+  setIsFilmLoad: Dispatch<boolean>;
 };
 
-export default function Main({ filmResp, setFilmResp, respParam }: MainProps) {
+export default function Main({
+  filmResp,
+  setFilmResp,
+  respParam,
+  setIsFilmLoad,
+}: MainProps) {
   return (
     <div className={style.main}>
       <div className={style.wrapper}>
@@ -39,6 +45,7 @@ export default function Main({ filmResp, setFilmResp, respParam }: MainProps) {
           filmResp={filmResp}
           setFilmResp={setFilmResp}
           respParam={respParam}
+          setIsFilmLoad={setIsFilmLoad}
         />
       </div>
       <Outlet></Outlet>

@@ -7,24 +7,31 @@ type HeaderProps = {
   respParam: RespParam;
   setFilmResp: Dispatch<RequestAns | undefined>;
   setRespParam: Dispatch<RespParam>;
+  setIsFilmLoad: Dispatch<boolean>;
 };
 
-function Header({ respParam, setFilmResp, setRespParam }: HeaderProps) {
+function Header({
+  respParam,
+  setFilmResp,
+  setRespParam,
+  setIsFilmLoad,
+}: HeaderProps) {
   const saveSearchValue = () => {
     if (respParam?.searchValue)
       localStorage.setItem('searchValue', respParam.searchValue);
   };
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e);
     const { value } = e.target;
     setRespParam({ ...respParam, searchValue: value });
   };
 
   const buttonClick = async () => {
+    setIsFilmLoad(false);
     const resp = await queryToAPI(respParam);
     saveSearchValue();
     setFilmResp(resp);
+    setIsFilmLoad(true);
   };
 
   const inputKeyPress = (e: KeyboardEvent) => {

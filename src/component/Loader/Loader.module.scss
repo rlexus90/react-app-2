@@ -1,0 +1,23 @@
+.container {
+  padding: 40px;
+}
+
+.loader {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: 20px solid rgb(197, 197, 197);
+  border-bottom: 20px solid rgb(89, 89, 89);
+  animation: load 2s linear infinite;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
