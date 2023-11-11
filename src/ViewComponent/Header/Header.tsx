@@ -1,4 +1,4 @@
-import { Dispatch } from 'react';
+import { Dispatch, KeyboardEvent } from 'react';
 import styles from './Header.module.scss';
 import { RequestAns, RespParam } from '../../types/types';
 import { queryToAPI } from '../../utils/utils';
@@ -25,6 +25,12 @@ function Header({ respParam, setFilmResp, setRespParam }: HeaderProps) {
     saveSearchValue();
     setFilmResp(resp);
   };
+
+  const inputKeyPress = (e: KeyboardEvent) => {
+    const key = e.key;
+    if (key === 'Enter') buttonClick();
+  };
+
   return (
     <div className="header">
       <div className={styles.wrapper}>
@@ -33,6 +39,7 @@ function Header({ respParam, setFilmResp, setRespParam }: HeaderProps) {
           className={styles.search}
           value={respParam.searchValue}
           onChange={onChangeHandler}
+          onKeyDown={inputKeyPress}
         />
         <button className={styles.btn} onClick={buttonClick}>
           Search
