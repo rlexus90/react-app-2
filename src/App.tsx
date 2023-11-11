@@ -1,55 +1,49 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
-import Header from './Header/Header';
-import Main from './Main/Main';
-import APIResponce from './controller/APIResponse';
-import { Starship, StarshipsRequest } from './types/types';
+import Header from './ViewComponent/Header/Header';
+import Main from './ViewComponent/Main/Main';
+import { RequestAns, RespParam } from './types/types';
+import ErrorBoundary from './component/ErrorBoundary/ErrorBoundary';
+import { queryToAPI } from './utils/utils';
+import { Loader } from './component/Loader/Loader';
 
 function App() {
-  const [searchValue, setSearchValue] = useState(() => {
-    const loadFromStorage = localStorage.getItem('searchValue');
-    if (loadFromStorage) return loadFromStorage;
-    return '';
+  const [respParam, setRespParam] = useState((): RespParam => {
+    const search = localStorage.getItem('searchValue');
+    if (search) return { searchValue: search, page: '1', limit: '10' };
+    return { page: '1', limit: '10' };
   });
-  const [starShips, setStarships] = useState<Starship[]>();
-  const [dataResp, setDataResp] = useState<StarshipsRequest | undefined>();
+  const [filmResp, setFilmResp] = useState<RequestAns | undefined>();
+  const [isFilmLoad, setIsFilmLoad] = useState(false);
 
-  const buttonClick = async () => {
-    let resp: StarshipsRequest | undefined;
-    saveSearchValue();
-    if (searchValue) {
-      resp = await APIResponce.getSearchShips(searchValue);
-    } else {
-      resp = await APIResponce.getAllShips();
-    }
-    if (resp) {
-      setStarships(resp.results);
-    }
-    setDataResp(resp);
-  };
-
-  const onChangeHandler = (event: { target: { value: string } }) => {
-    const { value } = event.target;
-    setSearchValue(value);
-  };
-
-  const saveSearchValue = () => {
-    if (searchValue) localStorage.setItem('searchValue', searchValue);
-  };
+  useEffect(() => {
+    (async () => {
+      const firstLoad = await queryToAPI(respParam);
+      setFilmResp(firstLoad);
+      setIsFilmLoad(true);
+    })();
+  }, []);
 
   return (
     <>
       <Header
-        searchValue={searchValue}
-        buttonClick={buttonClick}
-        onChangeHandler={onChangeHandler}
+        respParam={respParam}
+        setFilmResp={setFilmResp}
+        setRespParam={setRespParam}
+        setIsFilmLoad={setIsFilmLoad}
       ></Header>
-
-      <Main
-        starShips={starShips}
-        dataResp={dataResp}
-        setDataResp={setDataResp}
-      ></Main>
+      <ErrorBoundary>
+        {isFilmLoad ? (
+          <Main
+            filmResp={filmResp}
+            setFilmResp={setFilmResp}
+            respParam={respParam}
+            setIsFilmLoad={setIsFilmLoad}
+          ></Main>
+        ) : (
+          <Loader />
+        )}
+      </ErrorBoundary>
     </>
   );
 }

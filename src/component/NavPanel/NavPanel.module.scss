@@ -1,0 +1,16 @@
+.nav {
+  margin: 20px auto 50px;
+  width: min-content;
+  display: flex;
+  font-size: 22px;
+  gap: 10px;
+
+  a {
+    display: block;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  color: grey;
+}
