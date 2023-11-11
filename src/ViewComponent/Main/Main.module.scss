@@ -22,11 +22,6 @@
   text-align: center;
 }
 
-.disabled {
-  pointer-events: none;
-  color: grey;
-}
-
 .container {
   // flex: 0 0 1000px;
   display: flex;
@@ -45,18 +40,6 @@
   width: 100%;
   display: block;
   padding: 5px 0;
-}
-
-.nav {
-  margin: 20px auto;
-  width: min-content;
-  display: flex;
-  font-size: 16px;
-  gap: 10px;
-
-  a {
-    display: block;
-  }
 }
 
 .main {

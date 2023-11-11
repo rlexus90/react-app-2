@@ -1,9 +1,9 @@
 import { Link, Outlet } from 'react-router-dom';
 import { RequestAns, RespParam } from '../../types/types';
 import style from './Main.module.scss';
-import { Dispatch, SyntheticEvent } from 'react';
-import { queryToAPI } from '../../utils/utils';
+import { Dispatch } from 'react';
 import noImg from '/no_image.jpg';
+import NavPanel from '../../component/NavPanel/NavPanel';
 
 type MainProps = {
   filmResp: RequestAns | undefined;
@@ -12,28 +12,6 @@ type MainProps = {
 };
 
 export default function Main({ filmResp, setFilmResp, respParam }: MainProps) {
-  const currentPage = filmResp ? filmResp.page : '';
-
-  const prewPage = async (event: SyntheticEvent) => {
-    event.preventDefault();
-    if (filmResp?.page === 1 || !filmResp?.page) return;
-    const page = await queryToAPI({
-      ...respParam,
-      page: String(filmResp?.page - 1),
-    });
-    if (page) setFilmResp(page);
-  };
-
-  const nextPage = async (event: SyntheticEvent) => {
-    event.preventDefault();
-    if (!filmResp?.next) return;
-    const page = await queryToAPI({
-      ...respParam,
-      page: String(+filmResp.page + 1),
-    });
-    if (page) setFilmResp(page);
-  };
-
   return (
     <div className={style.main}>
       <div className={style.wrapper}>
@@ -57,23 +35,11 @@ export default function Main({ filmResp, setFilmResp, respParam }: MainProps) {
             );
           })}
         </ul>
-        <nav className={style.nav}>
-          <a
-            href="#"
-            className={filmResp?.page == 1 ? style.disabled : ' '}
-            onClick={prewPage}
-          >
-            prew
-          </a>
-          <p>{currentPage}</p>
-          <a
-            href="#"
-            className={!filmResp?.next ? style.disabled : ' '}
-            onClick={nextPage}
-          >
-            next
-          </a>
-        </nav>
+        <NavPanel
+          filmResp={filmResp}
+          setFilmResp={setFilmResp}
+          respParam={respParam}
+        />
       </div>
       <Outlet></Outlet>
     </div>
