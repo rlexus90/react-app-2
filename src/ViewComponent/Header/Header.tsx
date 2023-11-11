@@ -1,4 +1,4 @@
-import { Dispatch, KeyboardEvent } from 'react';
+import { Dispatch, KeyboardEvent, ChangeEvent } from 'react';
 import styles from './Header.module.scss';
 import { RequestAns, RespParam } from '../../types/types';
 import { queryToAPI } from '../../utils/utils';
@@ -15,8 +15,9 @@ function Header({ respParam, setFilmResp, setRespParam }: HeaderProps) {
       localStorage.setItem('searchValue', respParam.searchValue);
   };
 
-  const onChangeHandler = (event: { target: { value: string } }) => {
-    const { value } = event.target;
+  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e);
+    const { value } = e.target;
     setRespParam({ ...respParam, searchValue: value });
   };
 
@@ -29,6 +30,11 @@ function Header({ respParam, setFilmResp, setRespParam }: HeaderProps) {
   const inputKeyPress = (e: KeyboardEvent) => {
     const key = e.key;
     if (key === 'Enter') buttonClick();
+  };
+
+  const selectlimit = (e: ChangeEvent<HTMLSelectElement>) => {
+    const { value } = e.target;
+    setRespParam({ ...respParam, limit: value });
   };
 
   return (
@@ -44,6 +50,15 @@ function Header({ respParam, setFilmResp, setRespParam }: HeaderProps) {
         <button className={styles.btn} onClick={buttonClick}>
           Search
         </button>
+        <select defaultValue={10} onChange={selectlimit}>
+          <option value="6">6</option>
+          <option value="9">9</option>
+          <option value="10" disabled={true}>
+            10
+          </option>
+          <option value="12">12</option>
+          <option value="16">16</option>
+        </select>
       </div>
     </div>
   );
