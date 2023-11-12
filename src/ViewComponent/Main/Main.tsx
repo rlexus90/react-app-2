@@ -1,23 +1,12 @@
 import { Link, Outlet } from 'react-router-dom';
-import { RequestAns, RespParam } from '../../types/types';
 import style from './Main.module.scss';
-import { Dispatch } from 'react';
+import { useContext } from 'react';
 import noImg from '/no_image.jpg';
 import NavPanel from '../../component/NavPanel/NavPanel';
+import { RespContext } from '../../context/RespContext';
 
-type MainProps = {
-  filmResp: RequestAns | undefined;
-  setFilmResp: Dispatch<RequestAns | undefined>;
-  respParam: RespParam;
-  setIsFilmLoad: Dispatch<boolean>;
-};
-
-export default function Main({
-  filmResp,
-  setFilmResp,
-  respParam,
-  setIsFilmLoad,
-}: MainProps) {
+export default function Main() {
+  const { filmResp } = useContext(RespContext);
   return (
     <div className={style.main}>
       <div className={style.wrapper}>
@@ -41,12 +30,7 @@ export default function Main({
             );
           })}
         </ul>
-        <NavPanel
-          filmResp={filmResp}
-          setFilmResp={setFilmResp}
-          respParam={respParam}
-          setIsFilmLoad={setIsFilmLoad}
-        />
+        <NavPanel />
       </div>
       <Outlet></Outlet>
     </div>

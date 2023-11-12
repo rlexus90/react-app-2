@@ -1,3 +1,5 @@
+import { Dispatch } from 'react';
+
 export interface RequestAns {
   page: number;
   next: string;
@@ -51,4 +53,13 @@ export interface RespParam {
   searchValue?: string;
   page?: string;
   limit?: string;
+}
+
+export interface RespContextValue {
+  respParam: RespParam;
+  setRespParam: Dispatch<RespParam>;
+  filmResp: RequestAns | undefined;
+  setFilmResp: Dispatch<RequestAns | undefined>;
+  isFilmLoad: boolean;
+  setIsFilmLoad: Dispatch<boolean>;
 }

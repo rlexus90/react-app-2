@@ -1,21 +1,12 @@
-import { Dispatch, KeyboardEvent, ChangeEvent } from 'react';
+import { KeyboardEvent, ChangeEvent, useContext } from 'react';
 import styles from './Header.module.scss';
-import { RequestAns, RespParam } from '../../types/types';
 import { queryToAPI } from '../../utils/utils';
+import { RespContext } from '../../context/RespContext';
 
-type HeaderProps = {
-  respParam: RespParam;
-  setFilmResp: Dispatch<RequestAns | undefined>;
-  setRespParam: Dispatch<RespParam>;
-  setIsFilmLoad: Dispatch<boolean>;
-};
+function Header() {
+  const { respParam, setFilmResp, setRespParam, setIsFilmLoad } =
+    useContext(RespContext);
 
-function Header({
-  respParam,
-  setFilmResp,
-  setRespParam,
-  setIsFilmLoad,
-}: HeaderProps) {
   const saveSearchValue = () => {
     if (respParam?.searchValue)
       localStorage.setItem('searchValue', respParam.searchValue);
@@ -64,7 +55,7 @@ function Header({
             10
           </option>
           <option value="12">12</option>
-          <option value="16">16</option>
+          <option value="15">15</option>
         </select>
       </div>
     </div>

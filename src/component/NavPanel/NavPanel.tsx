@@ -1,21 +1,12 @@
-import { Dispatch, SyntheticEvent } from 'react';
-import { RequestAns, RespParam } from '../../types/types';
+import { SyntheticEvent, useContext } from 'react';
 import { queryToAPI } from '../../utils/utils';
 import style from './NavPanel.module.scss';
+import { RespContext } from '../../context/RespContext';
 
-type NavPanelProps = {
-  filmResp: RequestAns | undefined;
-  setFilmResp: Dispatch<RequestAns | undefined>;
-  respParam: RespParam;
-  setIsFilmLoad: Dispatch<boolean>;
-};
+export default function NavPanel() {
+  const { filmResp, setFilmResp, respParam, setIsFilmLoad } =
+    useContext(RespContext);
 
-export default function NavPanel({
-  filmResp,
-  setFilmResp,
-  respParam,
-  setIsFilmLoad,
-}: NavPanelProps) {
   const currentPage = filmResp ? filmResp.page : '';
 
   const prewPage = async (event: SyntheticEvent) => {
