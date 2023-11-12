@@ -16,6 +16,7 @@
     "prepare": "husky install",
     "add": "git add .",
     "test": "vitest",
+    "test:one": "vitest run",
     "coverage": "vitest run --coverage"
   },
   "husky": {
@@ -23,7 +24,7 @@
       "pre-commit": [
         "lint:fix",
         "prettier",
-        "test",
+        "test:one",
         "add"
       ]
     }
