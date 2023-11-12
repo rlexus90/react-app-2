@@ -23,8 +23,8 @@
       "pre-commit": [
         "lint:fix",
         "prettier",
-        "add",
-        "git add ."
+        "test",
+        "add"
       ]
     }
   },

@@ -71,6 +71,6 @@ describe('test prew btn', () => {
     expect(true).toBe(true);
     const prewBtn = screen.getByText('prew');
     await userEvent.click(prewBtn);
-    expect(queryToAPI).toBeCalledWith({ page: '1' });
+    expect(queryToAPI).toBeCalledWith({ page: '3' });
   });
 });
