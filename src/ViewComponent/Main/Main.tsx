@@ -8,7 +8,7 @@ import { RespContext } from '../../context/RespContext';
 export default function Main() {
   const { filmResp } = useContext(RespContext);
   return (
-    <div className={style.main}>
+    <div className={style.main} data-testid="main">
       <div className={style.wrapper}>
         <ul className={style.container}>
           {!filmResp?.results.length ? (

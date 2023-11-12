@@ -48,6 +48,7 @@ function Header() {
           icon={faVirus}
           onClick={throwError}
           className={styles.error}
+          data-testid="bug-icon"
         />
         <input
           type="text"
@@ -55,11 +56,12 @@ function Header() {
           value={respParam.searchValue}
           onChange={onChangeHandler}
           onKeyDown={inputKeyPress}
+          data-testid="search-input"
         />
         <button className={styles.btn} onClick={buttonClick}>
           Search
         </button>
-        <select defaultValue={10} onChange={selectlimit}>
+        <select defaultValue={10} onChange={selectlimit} data-testid="select">
           <option value="6">6</option>
           <option value="9">9</option>
           <option value="10" disabled={true}>

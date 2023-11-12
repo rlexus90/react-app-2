@@ -10,7 +10,7 @@ export interface RequestAns {
 export interface Film {
   _id: string;
   id: string;
-  primaryImage?: {
+  primaryImage?: null | {
     id: string;
     width: number;
     height: number;
@@ -22,10 +22,19 @@ export interface Film {
     __typename: string;
   };
   titleType: {
+    displayableProperty?: {
+      value: {
+        plainText: string;
+        __typename: string;
+      };
+      __typename: string;
+    };
     text: string;
     id: string;
     isSeries: boolean;
     isEpisode: boolean;
+    categories?: [Record<string, string>];
+    canHaveEpisodes?: boolean;
     __typename: string;
   };
   titleText: {
@@ -37,14 +46,14 @@ export interface Film {
     __typename: string;
   };
   releaseYear?: {
-    year?: number;
-    endYear?: null;
+    year?: number | null;
+    endYear?: null | number;
     __typename?: string;
   };
   releaseDate?: {
-    day?: null;
-    month?: null;
-    year?: number;
+    day?: number | null;
+    month?: number | null;
+    year?: number | null;
     __typename?: string;
   };
 }
