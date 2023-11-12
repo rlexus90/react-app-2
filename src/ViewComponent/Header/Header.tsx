@@ -2,6 +2,9 @@ import { KeyboardEvent, ChangeEvent, useContext } from 'react';
 import styles from './Header.module.scss';
 import { queryToAPI } from '../../utils/utils';
 import { RespContext } from '../../context/RespContext';
+import { RequestAns } from '../../types/types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVirus } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   const { respParam, setFilmResp, setRespParam, setIsFilmLoad } =
@@ -34,10 +37,18 @@ function Header() {
     const { value } = e.target;
     setRespParam({ ...respParam, limit: value });
   };
-
+  const throwError = () => {
+    const resp = {} as RequestAns;
+    setFilmResp(resp);
+  };
   return (
     <div className="header">
       <div className={styles.wrapper}>
+        <FontAwesomeIcon
+          icon={faVirus}
+          onClick={throwError}
+          className={styles.error}
+        />
         <input
           type="text"
           className={styles.search}
