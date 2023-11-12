@@ -25,6 +25,8 @@ function App() {
     })();
   }, []);
 
+  console.log(filmResp);
+
   return (
     <>
       <RespContext.Provider
