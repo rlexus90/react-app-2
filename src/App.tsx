@@ -6,6 +6,7 @@ import { RequestAns, RespParam } from './types/types';
 import ErrorBoundary from './component/ErrorBoundary/ErrorBoundary';
 import { queryToAPI } from './utils/utils';
 import { Loader } from './component/Loader/Loader';
+import { RespContext } from './context/RespContext';
 
 function App() {
   const [respParam, setRespParam] = useState((): RespParam => {
@@ -24,26 +25,23 @@ function App() {
     })();
   }, []);
 
+  console.log(filmResp);
+
   return (
     <>
-      <Header
-        respParam={respParam}
-        setFilmResp={setFilmResp}
-        setRespParam={setRespParam}
-        setIsFilmLoad={setIsFilmLoad}
-      ></Header>
-      <ErrorBoundary>
-        {isFilmLoad ? (
-          <Main
-            filmResp={filmResp}
-            setFilmResp={setFilmResp}
-            respParam={respParam}
-            setIsFilmLoad={setIsFilmLoad}
-          ></Main>
-        ) : (
-          <Loader />
-        )}
-      </ErrorBoundary>
+      <RespContext.Provider
+        value={{
+          respParam,
+          setRespParam,
+          filmResp,
+          setFilmResp,
+          isFilmLoad,
+          setIsFilmLoad,
+        }}
+      >
+        <Header></Header>
+        <ErrorBoundary>{isFilmLoad ? <Main></Main> : <Loader />}</ErrorBoundary>
+      </RespContext.Provider>
     </>
   );
 }
