@@ -15,7 +15,7 @@ export default function MoreInfo() {
   };
 
   return (
-    <div className={styles.modal} onClick={returnBack}>
+    <div className={styles.modal} onClick={returnBack} data-testid="more-info">
       <div className={styles.wrapper}>
         <img
           className={styles.image}

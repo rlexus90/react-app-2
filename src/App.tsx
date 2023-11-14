@@ -25,7 +25,7 @@ function App() {
     })();
   }, []);
 
-  console.log(filmResp);
+  // console.log(filmResp);
 
   return (
     <>

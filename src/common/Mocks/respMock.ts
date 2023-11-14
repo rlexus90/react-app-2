@@ -1,4 +1,4 @@
-import { RequestAns } from '../../types/types';
+import { RequestAns, RequestAnsOneFilm } from '../../types/types';
 
 export const respMock: RequestAns = {
   page: 1,
@@ -473,4 +473,65 @@ export const respMock: RequestAns = {
       },
     },
   ],
+};
+
+export const respMockOneFilm: RequestAnsOneFilm = {
+  page: 1,
+  next: '/titles/search/title/avengers?page=2&limit=10',
+  entries: 10,
+  results: {
+    _id: '62dfa6db2642eeae6636b049',
+    id: 'tt21361444',
+    primaryImage: {
+      id: 'rm3349350401',
+      width: 1920,
+      height: 2883,
+      url: 'https://m.media-amazon.com/images/M/MV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg',
+      caption: {
+        plainText: 'Avengers: Secret Wars (2027)',
+        __typename: 'Markdown',
+      },
+      __typename: 'Image',
+    },
+    titleType: {
+      displayableProperty: {
+        value: {
+          plainText: '',
+          __typename: 'Markdown',
+        },
+        __typename: 'DisplayableTitleTypeProperty',
+      },
+      text: 'Movie',
+      id: 'movie',
+      isSeries: false,
+      isEpisode: false,
+      categories: [
+        {
+          value: 'movie',
+          __typename: 'TitleTypeCategory',
+        },
+      ],
+      canHaveEpisodes: false,
+      __typename: 'TitleType',
+    },
+    titleText: {
+      text: 'Avengers: Secret Wars',
+      __typename: 'TitleText',
+    },
+    originalTitleText: {
+      text: 'Avengers: Secret Wars',
+      __typename: 'TitleText',
+    },
+    releaseYear: {
+      year: 2027,
+      endYear: null,
+      __typename: 'YearRange',
+    },
+    releaseDate: {
+      day: 7,
+      month: 5,
+      year: 2027,
+      __typename: 'ReleaseDate',
+    },
+  },
 };

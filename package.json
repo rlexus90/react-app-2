@@ -34,14 +34,10 @@
     "*.{js,jsx,ts,tsx,html,css}": "prettier"
   },
   "dependencies": {
-
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-
-
     "axios": "^0.27.2",
-
     "body-scroll-lock": "^4.0.0-beta.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
@@ -78,6 +74,7 @@
     "sass": "^1.69.5",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
-    "vitest": "^0.34.6"
+    "vitest": "^0.34.6",
+    "vitest-mock-axios": "^0.1.0"
   }
 }

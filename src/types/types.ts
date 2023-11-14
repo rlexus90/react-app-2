@@ -7,6 +7,13 @@ export interface RequestAns {
   results: Film[];
 }
 
+export interface RequestAnsOneFilm {
+  page: number;
+  next: string;
+  entries: number;
+  results: Film;
+}
+
 export interface Film {
   _id: string;
   id: string;

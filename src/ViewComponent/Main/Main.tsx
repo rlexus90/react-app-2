@@ -16,7 +16,7 @@ export default function Main() {
           ) : (
             filmResp?.results.map((el) => {
               return (
-                <li data-testid="cart" className={style.film} key={el.id}>
+                <li data-testid="card" className={style.film} key={el.id}>
                   <Link to={`${el.id}`} className={style.more}>
                     <img
                       className={style.image}
