@@ -12,9 +12,12 @@ import { RequestAns } from '../../types/types';
 vi.mock('./utils/utils', () => ({
   queryToAPI: vi.fn().mockResolvedValue(respMock),
 }));
-const resp = { type: 'return', value: { results: null } } as unknown as RequestAns;
+const resp = {
+  type: 'return',
+  value: { results: null },
+} as unknown as RequestAns;
 const getmovie = vi.spyOn(APIResponce, 'getMovie');
-getmovie.mockResolvedValue(resp)
+getmovie.mockResolvedValue(resp);
 
 it('Test not found page', async () => {
   const rote = createMemoryRouter(
@@ -49,5 +52,4 @@ it('Test not found page', async () => {
 
   const text = await screen.findByText('Sorry... Page not found');
   expect(text).toBeInTheDocument();
-	console.log(getmovie.mock.results)
 });
