@@ -8,9 +8,9 @@ export interface RequestAns {
 }
 
 export interface RequestAnsOneFilm {
-  page: number;
-  next: string;
-  entries: number;
+  page?: number;
+  next?: string;
+  entries?: number;
   results: Film;
 }
 

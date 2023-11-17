@@ -2,9 +2,15 @@ import { describe, it, expect } from 'vitest';
 import Header from './Header';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { store } from '../../store/store';
+import { Provider } from 'react-redux';
 
 describe('Header component test', () => {
-  render(<Header />);
+  render(
+    <Provider store={store}>
+      <Header />
+    </Provider>
+  );
 
   it('Test components', () => {
     const input = screen.getByTestId('search-input');

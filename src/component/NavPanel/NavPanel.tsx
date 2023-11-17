@@ -1,51 +1,39 @@
-import { SyntheticEvent, useContext } from 'react';
-import { queryToAPI } from '../../utils/utils';
+import { SyntheticEvent } from 'react';
 import style from './NavPanel.module.scss';
-import { RespContext } from '../../context/RespContext';
+import { useActions, useAppSelector } from '../../store/hook/hook';
 
 export default function NavPanel() {
-  const { filmResp, setFilmResp, respParam, setIsFilmLoad } =
-    useContext(RespContext);
+  const { page } = useAppSelector((store) => store.respParam);
+  const { setRespParam } = useActions();
+  const { haveNext } = useAppSelector((store) => store.nextPage);
 
-  const currentPage = filmResp ? filmResp.page : '';
-
-  const prewPage = async (event: SyntheticEvent) => {
+  const prewPage = (event: SyntheticEvent) => {
     event.preventDefault();
-    setIsFilmLoad(false);
-    if (filmResp?.page === 1 || !filmResp?.page) return;
-    const page = await queryToAPI({
-      ...respParam,
-      page: String(filmResp?.page - 1),
-    });
-    if (page) setFilmResp(page);
-    setIsFilmLoad(true);
+    if (page === '1' || !page) return;
+    const newPage = +page - 1;
+    setRespParam({ page: newPage.toString() });
   };
 
   const nextPage = async (event: SyntheticEvent) => {
     event.preventDefault();
-    setIsFilmLoad(false);
-    if (!filmResp?.next) return;
-    const page = await queryToAPI({
-      ...respParam,
-      page: String(+filmResp.page + 1),
-    });
-    if (page) setFilmResp(page);
-    setIsFilmLoad(true);
+    if (!haveNext || !page) return;
+    const newPage = +page + 1;
+    setRespParam({ page: newPage.toString() });
   };
 
   return (
     <nav className={style.nav}>
       <a
         href="#"
-        className={filmResp?.page == 1 ? style.disabled : ' '}
+        className={page === '1' ? style.disabled : ' '}
         onClick={prewPage}
       >
         prew
       </a>
-      <p>{currentPage}</p>
+      <p>{page}</p>
       <a
         href="#"
-        className={!filmResp?.next ? style.disabled : ' '}
+        className={!haveNext ? style.disabled : ' '}
         onClick={nextPage}
       >
         next

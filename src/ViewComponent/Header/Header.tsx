@@ -1,31 +1,33 @@
-import { KeyboardEvent, ChangeEvent, useContext } from 'react';
+import { KeyboardEvent, ChangeEvent, useEffect, useState } from 'react';
 import styles from './Header.module.scss';
-import { queryToAPI } from '../../utils/utils';
-import { RespContext } from '../../context/RespContext';
-import { RequestAns } from '../../types/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVirus } from '@fortawesome/free-solid-svg-icons';
+import { useActions } from '../../store/hook/hook';
 
 function Header() {
-  const { respParam, setFilmResp, setRespParam, setIsFilmLoad } =
-    useContext(RespContext);
+  const [inputValue, setInputValue] = useState('');
+  const { setRespParam } = useActions();
+
+  useEffect(() => {
+    const search = localStorage.getItem('searchValue');
+    if (search) {
+      setInputValue(search);
+      setRespParam({ searchValue: search });
+    }
+  }, []);
 
   const saveSearchValue = () => {
-    if (respParam?.searchValue)
-      localStorage.setItem('searchValue', respParam.searchValue);
+    localStorage.setItem('searchValue', inputValue);
   };
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    setRespParam({ ...respParam, searchValue: value });
+    setInputValue(value);
   };
 
   const buttonClick = async () => {
-    setIsFilmLoad(false);
-    const resp = await queryToAPI(respParam);
     saveSearchValue();
-    setFilmResp(resp);
-    setIsFilmLoad(true);
+    setRespParam({ searchValue: inputValue });
   };
 
   const inputKeyPress = (e: KeyboardEvent) => {
@@ -35,12 +37,12 @@ function Header() {
 
   const selectlimit = (e: ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
-    setRespParam({ ...respParam, limit: value });
+    setRespParam({ limit: value });
   };
   const throwError = () => {
-    const resp = {} as RequestAns;
-    setFilmResp(resp);
+    // const resp = {} as RequestAns;
   };
+
   return (
     <div className="header">
       <div className={styles.wrapper}>
@@ -53,7 +55,7 @@ function Header() {
         <input
           type="text"
           className={styles.search}
-          value={respParam.searchValue}
+          value={inputValue}
           onChange={onChangeHandler}
           onKeyDown={inputKeyPress}
           data-testid="search-input"

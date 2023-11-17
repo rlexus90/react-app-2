@@ -127,4 +127,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-*.d.ts
