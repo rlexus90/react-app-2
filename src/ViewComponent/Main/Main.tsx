@@ -1,10 +1,11 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useSearchParams } from 'react-router-dom';
 import style from './Main.module.scss';
 import noImg from '/no_image.jpg';
 import NavPanel from '../../component/NavPanel/NavPanel';
 import { useActions, useAppSelector } from '../../store/hook/hook';
 import { useGetMoviePageQuery } from '../../controller/FilmAPI';
 import { Loader } from '../../component/Loader/Loader';
+import { useEffect } from 'react';
 
 export default function Main() {
   const { searchValue, page, limit } = useAppSelector(
@@ -15,7 +16,17 @@ export default function Main() {
     page,
     limit,
   });
-  const { setHaveNext } = useActions();
+  const { setHaveNext, setRespParam } = useActions();
+  const [searchParam, setSearchParam] = useSearchParams();
+
+  useEffect(() => {
+    const searchPage = searchParam.get('page');
+    if (searchPage) setRespParam({ page: searchPage });
+  }, [searchParam]);
+
+  useEffect(() => {
+    if (page) setSearchParam({ page });
+  }, [page]);
 
   (async () => {
     (await filmsAns?.next) ? setHaveNext(true) : setHaveNext(false);
