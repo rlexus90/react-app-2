@@ -3,10 +3,12 @@ import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVirus } from '@fortawesome/free-solid-svg-icons';
 import { useActions } from '../../store/hook/hook';
+import { useErrorBoundary } from 'react-error-boundary';
 
 function Header() {
   const { setRespParam, setRespWithOutSearch } = useActions();
   const [inputVal, setInputVal] = useState('');
+  const { showBoundary } = useErrorBoundary();
 
   useEffect(() => {
     const search = localStorage.getItem('searchValue');
@@ -41,7 +43,7 @@ function Header() {
     setRespParam({ limit: value });
   };
   const throwError = () => {
-    // const resp = {} as RequestAns;
+    showBoundary(Error('Opps!'));
   };
 
   return (

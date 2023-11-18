@@ -1,13 +1,14 @@
+import { ErrorBoundary } from 'react-error-boundary';
 import './App.scss';
 import Header from './ViewComponent/Header/Header';
 import Main from './ViewComponent/Main/Main';
-import ErrorBoundary from './component/ErrorBoundary/ErrorBoundary';
+import { FallbackRender } from './component/ErrorBoundary/FallbackRender';
 
 function App() {
   return (
     <>
-      <Header />
-      <ErrorBoundary>
+      <ErrorBoundary fallbackRender={FallbackRender}>
+        <Header />
         <Main />
       </ErrorBoundary>
     </>
