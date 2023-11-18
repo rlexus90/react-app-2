@@ -9,10 +9,11 @@ export default function MoreInfo() {
   const { id } = useParams();
   const { data, isFetching, status } = useGetMovieQuery(id as string);
   const film = data?.results;
-  console.log(status);
+
   if (status == 'fulfilled') {
     if (!film) return <Navigate to={'*'} />;
   }
+
   const returnBack = () => {
     navigate('/');
   };
