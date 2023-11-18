@@ -18,6 +18,12 @@ export const respParamSlice = createSlice({
       if (page) state.page = page;
       if (limit) state.limit = limit;
     },
+    setRespWithOutSearch: (state, action: PayloadAction<RespParam>) => {
+      const { searchValue, page, limit } = action.payload;
+      if (page) state.page = page;
+      if (limit) state.limit = limit;
+      state.searchValue = searchValue;
+    },
   },
 });
 

@@ -1,32 +1,34 @@
-import { KeyboardEvent, ChangeEvent, useEffect } from 'react';
+import { KeyboardEvent, ChangeEvent, useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVirus } from '@fortawesome/free-solid-svg-icons';
-import { useActions, useAppSelector } from '../../store/hook/hook';
+import { useActions } from '../../store/hook/hook';
 
 function Header() {
-  const { setRespParam } = useActions();
-  const { searchValue } = useAppSelector((store) => store.respParam);
+  const { setRespParam, setRespWithOutSearch } = useActions();
+  const [inputVal, setInputVal] = useState('');
 
   useEffect(() => {
     const search = localStorage.getItem('searchValue');
     if (search) {
       setRespParam({ searchValue: search });
+      setInputVal(search);
     }
   }, []);
 
   const saveSearchValue = () => {
-    localStorage.setItem('searchValue', searchValue as string);
+    localStorage.setItem('searchValue', inputVal as string);
   };
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    setRespParam({ searchValue: value });
+    setInputVal(value);
+    setRespWithOutSearch({ searchValue: value });
   };
 
   const buttonClick = async () => {
     saveSearchValue();
-    setRespParam({ searchValue });
+    setRespWithOutSearch({ searchValue: inputVal });
   };
 
   const inputKeyPress = (e: KeyboardEvent) => {
@@ -54,7 +56,7 @@ function Header() {
         <input
           type="text"
           className={styles.search}
-          value={searchValue}
+          value={inputVal}
           onChange={onChangeHandler}
           onKeyDown={inputKeyPress}
           data-testid="search-input"
