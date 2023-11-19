@@ -2,8 +2,16 @@ import style from './Loader.module.scss';
 
 export const Loader = () => {
   return (
-    <div className={style.container} data-testid="loader">
-      <div className={style.loader}></div>
+    <div data-testid="loader">
+      {/* <div className={style.loader}></div> */}
+      <div className={style.background}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   );
 };

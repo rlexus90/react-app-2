@@ -1,7 +1,7 @@
 import { KeyboardEvent, ChangeEvent, useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVirus } from '@fortawesome/free-solid-svg-icons';
+import { faBomb } from '@fortawesome/free-solid-svg-icons';
 import { useActions } from '../../store/hook/hook';
 import { useErrorBoundary } from 'react-error-boundary';
 
@@ -50,10 +50,11 @@ function Header() {
     <div className="header">
       <div className={styles.wrapper}>
         <FontAwesomeIcon
-          icon={faVirus}
+          icon={faBomb}
           onClick={throwError}
           className={styles.error}
           data-testid="bug-icon"
+          fade
         />
         <input
           type="text"

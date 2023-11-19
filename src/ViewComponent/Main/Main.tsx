@@ -63,7 +63,7 @@ export default function Main() {
             )}
           </ul>
         )}
-        {filmsAns?.results.length ? <NavPanel /> : null}
+        {filmsAns?.results.length && !isFetching ? <NavPanel /> : null}
       </div>
       <Outlet></Outlet>
     </div>
