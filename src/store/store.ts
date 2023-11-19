@@ -1,4 +1,8 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import {
+  configureStore,
+  combineReducers,
+  PreloadedState,
+} from '@reduxjs/toolkit';
 import respParam from './slices/RespParam';
 import nextPage from './slices/NextPage';
 import { filmApi } from '../controller/FilmAPI';
@@ -9,11 +13,12 @@ const rootReduser = combineReducers({
   [filmApi.reducerPath]: filmApi.reducer,
 });
 
-export const setupStore = () => {
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   return configureStore({
     reducer: rootReduser,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(filmApi.middleware),
+    preloadedState,
   });
 };
 
