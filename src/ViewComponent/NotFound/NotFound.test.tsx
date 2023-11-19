@@ -5,20 +5,16 @@ import '@testing-library/jest-dom';
 import MoreInfo from '../Modal/MoreInfo';
 import App from '../../App';
 import NotFound from './NotFound';
-// import { respMock } from '../../common/Mocks/respMock';
-// import { RequestAns } from '../../types/types';
+import { Provider } from 'react-redux';
+import { setupStore } from '../../store/store';
+import { server } from '../../mock/api/server';
 
-// vi.mock('./utils/utils', () => ({
-//   queryToAPI: vi.fn().mockResolvedValue(respMock),
-// }));
-// const resp = {
-//   type: 'return',
-//   value: { results: null },
-// } as unknown as RequestAns;
-// const getmovie = vi.spyOn(APIResponce, 'getMovie');
-// getmovie.mockResolvedValue(resp);
+const store = setupStore();
+server.events.on('request:start', ({ request }) => {
+  console.log('MSW intercepted:', request.method, request.url);
+});
 
-it.skip('Test not found page', async () => {
+it('Test not found page', async () => {
   const rote = createMemoryRouter(
     [
       {
@@ -40,7 +36,11 @@ it.skip('Test not found page', async () => {
       initialEntries: ['/wrong'],
     }
   );
-  render(<RouterProvider router={rote} />);
+  render(
+    <Provider store={store}>
+      <RouterProvider router={rote} />
+    </Provider>
+  );
 
   const text = await screen.findByText('Sorry... Page not found');
   expect(text).toBeInTheDocument();

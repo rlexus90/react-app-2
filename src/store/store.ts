@@ -9,11 +9,14 @@ const rootReduser = combineReducers({
   [filmApi.reducerPath]: filmApi.reducer,
 });
 
-export const store = configureStore({
-  reducer: rootReduser,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(filmApi.middleware),
-});
+export const setupStore = () => {
+  return configureStore({
+    reducer: rootReduser,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat(filmApi.middleware),
+  });
+};
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof rootReduser>;
+export type StoreType = ReturnType<typeof setupStore>;
+export type AppDispatch = StoreType['dispatch'];

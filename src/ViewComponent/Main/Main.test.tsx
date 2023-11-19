@@ -1,18 +1,15 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import Main from './Main';
-import { MemoryRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { renderApp } from '../../utils/testUtils';
+import { server } from '../../mock/api/server';
+import { HttpResponse, http } from 'msw';
+import { emptyResp } from '../../mock/respMock';
+import { setupServer } from 'msw/node';
 
-describe.skip('test main component', () => {
+describe('test main component', () => {
   beforeEach(() => {
-    {
-      render(
-        <MemoryRouter>
-          <Main />
-        </MemoryRouter>
-      );
-    }
+    renderApp();
   });
 
   it('test main component has render', () => {
@@ -20,13 +17,18 @@ describe.skip('test main component', () => {
     expect(main).toBeInTheDocument();
   });
 
-  it('test count card', () => {
-    const catrs = screen.queryAllByTestId('card');
+  it('Have Loader', async () => {
+    const loader = await screen.findByTestId('loader');
+    expect(loader).toBeInTheDocument();
+  });
+
+  it('test count card', async () => {
+    const catrs = await screen.findAllByTestId('card');
     expect(catrs.length).toBe(10);
   });
 
-  it('corect data render', () => {
-    const cards = screen.queryAllByTestId('card');
+  it('corect data render', async () => {
+    const cards = await screen.findAllByTestId('card');
     const card = screen.queryByText('Avengers: Secret Wars');
     expect(card).toBeInTheDocument();
     expect(card).to.equal(cards[0].childNodes[0].childNodes[1]);
@@ -34,17 +36,24 @@ describe.skip('test main component', () => {
   });
 });
 
-describe.skip('message when no response data', () => {
-  beforeEach(() => {
-    render(
-      <MemoryRouter>
-        <Main />
-      </MemoryRouter>
-    );
-  });
+server.events.on('request:start', ({ request }) => {
+  console.log('MSW intercepted:', request.method, request.url);
+});
 
-  it('Is message show>', () => {
-    const el = screen.queryByText('Nothing found!');
+describe('message when no response data', () => {
+  it('Is message show>', async () => {
+    server.close();
+    const serv = setupServer();
+    serv.listen();
+    serv.use(
+      http.get('https://moviesdatabase.p.rapidapi.com/titles', () =>
+        HttpResponse.json(emptyResp)
+      )
+    );
+
+    renderApp();
+    const el = await screen.findByText('Nothing found!');
     expect(el).toBeInTheDocument();
+    serv.close();
   });
 });

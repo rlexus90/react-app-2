@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import { RouterProvider } from 'react-router-dom';
 import router from './controller/router/router';
-import { store } from './store/store';
 import { Provider } from 'react-redux';
+import { setupStore } from './store/store';
+
+const store = setupStore();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

@@ -1,4 +1,4 @@
-import { RequestAns, RequestAnsOneFilm } from '../../types/types';
+import { RequestAns, RequestAnsOneFilm } from '../types/types';
 
 export const respMock: RequestAns = {
   page: 1,
@@ -534,4 +534,11 @@ export const respMockOneFilm: RequestAnsOneFilm = {
       __typename: 'ReleaseDate',
     },
   },
+};
+
+export const emptyResp: RequestAns = {
+  page: 1,
+  next: '/titles/search/title/avengers?page=2&limit=10',
+  entries: 10,
+  results: [],
 };

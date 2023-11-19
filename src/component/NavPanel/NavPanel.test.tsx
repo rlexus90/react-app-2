@@ -1,43 +1,39 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
-import NavPanel from './NavPanel';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, beforeEach } from 'vitest';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-
 import userEvent from '@testing-library/user-event';
+import { renderApp } from '../../utils/testUtils';
 
-describe.skip('Test Nav Panel block', () => {
-  vi.mock('../../utils/utils', () => ({ queryToAPI: vi.fn() }));
+describe('Test Nav Panel block', () => {
   beforeEach(() => {
-    render(<NavPanel />);
+    renderApp();
   });
 
-  it('Element renders', () => {
-    const prewBtn = screen.getByText('prew');
-    const nextBtn = screen.getByText('next');
+  it('Element renders', async () => {
+    const prewBtn = await screen.findByText('prew');
+    const nextBtn = await screen.findByText('next');
     expect(nextBtn).toBeInTheDocument();
     expect(prewBtn).toBeInTheDocument();
   });
 
   it('test navigate btn', async () => {
-    const nextBtn = screen.getByText('next');
+    const nextBtn = await screen.findByText('next');
+    const page1 = new URL(document.URL).searchParams.get('page');
+
+    expect(page1).toBe('1');
+
     await userEvent.click(nextBtn);
-    // expect(queryToAPI).toBeCalledWith({ page: '2' });
-    // expect(queryToAPI).toBeCalledTimes(1);
+    const page2 = new URL(document.URL).searchParams.get('page');
+
+    expect(page2).toBe('2');
+
     const prewBtn = screen.getByText('prew');
     await userEvent.click(prewBtn);
-    // expect(queryToAPI).toBeCalledTimes(1);
-  });
-});
+    const page3 = new URL(document.URL).searchParams.get('page');
+    expect(page3).toBe('1');
 
-describe.skip('test prew btn', () => {
-  beforeEach(() => {
-    render(<NavPanel />);
-  });
-
-  it('test prew btn click', async () => {
-    expect(true).toBe(true);
-    const prewBtn = screen.getByText('prew');
     await userEvent.click(prewBtn);
-    // expect(queryToAPI).toBeCalledWith({ page: '1' });
+    const page4 = new URL(document.URL).searchParams.get('page');
+    expect(page4).toBe('1');
   });
 });
