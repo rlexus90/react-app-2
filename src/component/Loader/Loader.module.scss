@@ -46,7 +46,7 @@ $particleRadius: 4vmin;
     @for $i from 1 through $amount {
       &:nth-child(#{$i}) {
         background: nth($colors, random(length($colors)));
-        animation-delay: ($i / $amount) * $animationDuration * -1;
+        animation-delay: calc($i / $amount * $animationDuration * -1);
         opacity: 0;
       }
     }
