@@ -64,7 +64,7 @@
     "msw": "^2.0.8",
     "prettier": "3.0.3",
     "sass": "^1.69.5",
-    "typescript": "^5.3.2",
+    "typescript": "5.2.2",
     "vite": "^4.4.5",
     "vitest": "^0.34.6",
     "vitest-mock-axios": "^0.1.0"
