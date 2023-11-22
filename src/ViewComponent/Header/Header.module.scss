@@ -8,6 +8,7 @@
 .search {
   width: 200px;
   height: 30px;
+  padding: 0 5px;
   background-color: rgb(199, 199, 193);
   font-size: inherit;
 }
@@ -17,5 +18,11 @@
   width: 80px;
   height: 30px;
   font-size: inherit;
-  color: rgb(143, 143, 143);
+  color: rgb(0, 0, 0);
+}
+
+.error {
+  margin: -5px 10px;
+  font-size: 25px;
+  color: rgb(1, 71, 10);
 }

@@ -1,37 +1,36 @@
-import { Dispatch, KeyboardEvent, ChangeEvent } from 'react';
+import { KeyboardEvent, ChangeEvent, useEffect, useState } from 'react';
 import styles from './Header.module.scss';
-import { RequestAns, RespParam } from '../../types/types';
-import { queryToAPI } from '../../utils/utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBomb } from '@fortawesome/free-solid-svg-icons';
+import { useActions } from '../../store/hook/hook';
+import { useErrorBoundary } from 'react-error-boundary';
 
-type HeaderProps = {
-  respParam: RespParam;
-  setFilmResp: Dispatch<RequestAns | undefined>;
-  setRespParam: Dispatch<RespParam>;
-  setIsFilmLoad: Dispatch<boolean>;
-};
+function Header() {
+  const { setRespParam, setRespWithOutSearch } = useActions();
+  const [inputVal, setInputVal] = useState('');
+  const { showBoundary } = useErrorBoundary();
 
-function Header({
-  respParam,
-  setFilmResp,
-  setRespParam,
-  setIsFilmLoad,
-}: HeaderProps) {
+  useEffect(() => {
+    const search = localStorage.getItem('searchValue');
+    if (search) {
+      setRespParam({ searchValue: search });
+      setInputVal(search);
+    }
+  }, []);
+
   const saveSearchValue = () => {
-    if (respParam?.searchValue)
-      localStorage.setItem('searchValue', respParam.searchValue);
+    localStorage.setItem('searchValue', inputVal as string);
   };
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    setRespParam({ ...respParam, searchValue: value });
+    setInputVal(value);
+    setRespWithOutSearch({ searchValue: value });
   };
 
   const buttonClick = async () => {
-    setIsFilmLoad(false);
-    const resp = await queryToAPI(respParam);
     saveSearchValue();
-    setFilmResp(resp);
-    setIsFilmLoad(true);
+    setRespWithOutSearch({ searchValue: inputVal });
   };
 
   const inputKeyPress = (e: KeyboardEvent) => {
@@ -41,30 +40,41 @@ function Header({
 
   const selectlimit = (e: ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
-    setRespParam({ ...respParam, limit: value });
+    setRespParam({ limit: value });
+  };
+  const throwError = () => {
+    showBoundary(Error('Opps!'));
   };
 
   return (
     <div className="header">
       <div className={styles.wrapper}>
+        <FontAwesomeIcon
+          icon={faBomb}
+          onClick={throwError}
+          className={styles.error}
+          data-testid="bug-icon"
+          fade
+        />
         <input
           type="text"
           className={styles.search}
-          value={respParam.searchValue}
+          value={inputVal}
           onChange={onChangeHandler}
           onKeyDown={inputKeyPress}
+          data-testid="search-input"
         />
         <button className={styles.btn} onClick={buttonClick}>
           Search
         </button>
-        <select defaultValue={10} onChange={selectlimit}>
+        <select defaultValue={10} onChange={selectlimit} data-testid="select">
           <option value="6">6</option>
           <option value="9">9</option>
           <option value="10" disabled={true}>
             10
           </option>
           <option value="12">12</option>
-          <option value="16">16</option>
+          <option value="15">15</option>
         </select>
       </div>
     </div>

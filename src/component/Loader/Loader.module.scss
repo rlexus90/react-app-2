@@ -1,11 +1,7 @@
-.container {
-  padding: 40px;
-}
-
 .loader {
   margin: 0 auto;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 100px;
   border: 20px solid rgb(197, 197, 197);
   border-bottom: 20px solid rgb(89, 89, 89);
@@ -19,5 +15,53 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+$animationDuration: 3s;
+$amount: 6;
+$particleRadius: 4vmin;
+
+.background {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+
+  span {
+    width: $particleRadius * 2;
+    height: $particleRadius * 2;
+    border-radius: $particleRadius;
+    backface-visibility: hidden;
+    position: absolute;
+    animation-name: move;
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 0.8);
+    animation-iteration-count: infinite;
+    animation-duration: $animationDuration;
+    top: calc(50% - #{$particleRadius});
+    left: 50%;
+    transform-origin: ($particleRadius * -1) center;
+
+    $colors: (#c5f0a4, #35b0ab, #226b80);
+
+    @for $i from 1 through $amount {
+      &:nth-child(#{$i}) {
+        background: nth($colors, random(length($colors)));
+        animation-delay: calc($i / $amount * $animationDuration * -1);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: scale(1) rotate(0deg) translate3d(0, 0, 1px);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    z-index: 10;
+    transform: scale(0) rotate(360deg) translate3d(0, 0, 1px);
   }
 }
