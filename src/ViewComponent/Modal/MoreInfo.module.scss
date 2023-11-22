@@ -1,0 +1,42 @@
+.modal {
+  display: flex;
+  flex: 1 1 auto;
+  position: relative;
+  padding: 10px;
+  margin: 15px;
+  position: sticky;
+  top: 30px;
+  width: 40vw;
+  height: fit-content;
+  max-height: 90vh;
+  background-color: rgba(90, 89, 89, 0.572);
+  border-radius: 20px;
+}
+
+.image {
+  display: block;
+  max-width: 80%;
+  object-fit: contain;
+  max-height: 90%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  flex: 1 1 auto;
+  width: 100%;
+  background-color: white;
+  margin: 15px auto;
+  padding: 20px;
+  border-radius: 10px;
+  p {
+    display: block;
+    width: auto;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.loader {
+  margin: 0 auto;
+}
