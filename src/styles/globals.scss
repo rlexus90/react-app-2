@@ -17,3 +17,17 @@ button {
   font-size: 20px;
   color: rgb(0, 0, 0);
 }
+
+.loader {
+  display: none;
+}
+
+.loader.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.657);
+}

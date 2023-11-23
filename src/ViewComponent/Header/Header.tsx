@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { RespParam } from '@/types/types';
 import { useErrorBoundary } from 'react-error-boundary';
 import { ParsedUrlQuery } from 'querystring';
+import { Loader } from '@/component/Loader/Loader';
 
 export const Header: FC = () => {
   const router = useRouter();
