@@ -1,36 +1,33 @@
-import { KeyboardEvent, ChangeEvent, useEffect, useState } from 'react';
+import { KeyboardEvent, ChangeEvent, useEffect, FC, useRef } from 'react';
 import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBomb } from '@fortawesome/free-solid-svg-icons';
-import { useActions } from '../../../prew_V/src/store/hook/hook';
+import { useRouter } from 'next/router';
+import { RespParam } from '@/types/types';
 import { useErrorBoundary } from 'react-error-boundary';
+import { ParsedUrlQuery } from 'querystring';
 
-function Header() {
-  const { setRespParam, setRespWithOutSearch } = useActions();
-  const [inputVal, setInputVal] = useState('');
+export const Header: FC = () => {
+  const router = useRouter();
+  const query: RespParam = router.query;
+  const input = useRef<HTMLInputElement>(null);
   const { showBoundary } = useErrorBoundary();
 
   useEffect(() => {
-    const search = localStorage.getItem('searchValue');
-    if (search) {
-      setRespParam({ searchValue: search });
-      setInputVal(search);
-    }
-  }, []);
+    const text = localStorage.getItem('searchValue');
+
+    if (text && input.current) input.current.value = text;
+  });
 
   const saveSearchValue = () => {
-    localStorage.setItem('searchValue', inputVal as string);
-  };
-
-  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setInputVal(value);
-    setRespWithOutSearch({ searchValue: value });
+    localStorage.setItem('searchValue', query.search as string);
   };
 
   const buttonClick = async () => {
+    query.search = input.current?.value;
+    query.page = '1';
     saveSearchValue();
-    setRespWithOutSearch({ searchValue: inputVal });
+    router.push({ pathname: '/', query: query as ParsedUrlQuery });
   };
 
   const inputKeyPress = (e: KeyboardEvent) => {
@@ -40,7 +37,9 @@ function Header() {
 
   const selectlimit = (e: ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
-    setRespParam({ limit: value });
+    if (!value) return;
+    query.limit = value;
+    router.push({ pathname: '/', query: query as ParsedUrlQuery });
   };
   const throwError = () => {
     showBoundary(Error('Opps!'));
@@ -59,15 +58,18 @@ function Header() {
         <input
           type="text"
           className={styles.search}
-          value={inputVal}
-          onChange={onChangeHandler}
+          ref={input}
           onKeyDown={inputKeyPress}
           data-testid="search-input"
         />
         <button className={styles.btn} onClick={buttonClick}>
           Search
         </button>
-        <select defaultValue={10} onChange={selectlimit} data-testid="select">
+        <select
+          defaultValue={query.limit || 10}
+          onChange={selectlimit}
+          data-testid="select"
+        >
           <option value="6">6</option>
           <option value="9">9</option>
           <option value="10" disabled={true}>
@@ -79,6 +81,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;

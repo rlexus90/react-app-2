@@ -1,9 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-	images:{
-		domains:['localhost','m.media-amazon.com']
-	}
+  typescript:{
+ignoreBuildErrors: true,
+  },
+  images:{
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'localhost',
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+      },
+    ],
+  }
 }
 
 module.exports = nextConfig

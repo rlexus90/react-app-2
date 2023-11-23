@@ -66,9 +66,10 @@ export interface Film {
 }
 
 export interface RespParam {
-  searchValue?: string;
+  search?: string;
   page?: string;
   limit?: string;
+  id?: string;
 }
 
 export interface RespContextValue {

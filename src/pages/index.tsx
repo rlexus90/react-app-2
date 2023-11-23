@@ -1,18 +1,15 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
-import styles from '@/styles/Home.module.css';
 import { Main } from '@/ViewComponent/Main/Main';
 import { GetServerSideProps } from 'next/types';
 import { RequestAns } from '@/types/types';
-import { HEADERS, REQUEST_URL } from '@/common/constants';
-import axios from 'axios';
 import { FC } from 'react';
+import { filmApi } from '@/controler/FilmAPI';
+import Header from '@/ViewComponent/Header/Header';
 
-const Home: FC<RequestAns> = (data) => {
+const Home: FC<RequestAns> = (filmsAns) => {
   return (
     <>
-      <Main data={data}></Main>
+      <Header />
+      <Main filmsAns={filmsAns} />
     </>
   );
 };
@@ -20,17 +17,10 @@ const Home: FC<RequestAns> = (data) => {
 export const getServerSideProps: GetServerSideProps<RequestAns> = async (
   context
 ) => {
-  const { data } = await axios.get<RequestAns>(REQUEST_URL, {
-    headers: HEADERS,
-    params: {
-      page: '1',
-      limit: '10',
-    },
-  });
-  console.log(2);
-  console.log(context.query);
+  const query = context.query;
+  const filmsAns = await filmApi.getFilmsPage(query);
   return {
-    props: data,
+    props: filmsAns,
   };
 };
 

@@ -1,32 +1,37 @@
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { Film, RequestAnsOneFilm, RespParam } from '@/types/types';
 import styles from './MoreInfo.module.scss';
-import noImg from '/no_image.jpg';
-import { useGetMovieQuery } from '../../../prew_V/src/controller/FilmAPI';
-import { Loader } from '../../../prew_V/src/component/Loader/Loader';
+import noImg from '../../../public/no_image.jpg';
+import { Loader } from '@/component/Loader/Loader';
+import { FC } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 
-export default function MoreInfo() {
-  const navigate = useNavigate();
-  const { id } = useParams();
-  const { data, isFetching, status } = useGetMovieQuery(id as string);
-  const film = data?.results;
+export const MoreInfo: FC<{ film: Film }> = ({ film }) => {
+  const router = useRouter();
+  const query: RespParam = router.query;
+  delete query.id;
+  const url = new URLSearchParams(
+    query as unknown as URLSearchParams
+  ).toString();
 
-  if (status == 'fulfilled') {
-    if (!film) return <Navigate to={'*'} />;
-  }
+  if (!film) return router.push('/');
 
   const returnBack = () => {
-    navigate('/');
+    router.replace(`/?${url}`);
   };
 
   return (
-    <div className={styles.modal} onClick={returnBack} data-testid="more-info">
-      {isFetching ? (
-        <div className={styles.loader}>
-          <Loader />
-        </div>
-      ) : (
+    <>
+      <div
+        className={styles.modal}
+        onClick={returnBack}
+        data-testid="more-info"
+      >
         <div className={styles.wrapper}>
-          <img
+          <Image
+            width={650}
+            height={900}
+            layout="responsive"
             className={styles.image}
             src={film?.primaryImage ? film.primaryImage.url : noImg}
             alt={
@@ -38,7 +43,7 @@ export default function MoreInfo() {
           <p>{film?.originalTitleText.text}</p>
           <p>Year: {film?.releaseYear?.year}</p>
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
-}
+};
