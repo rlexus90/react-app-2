@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   typescript:{
-ignoreBuildErrors: true,
+    ignoreBuildErrors: true,
+  },
+  compiler: {
+    reactRemoveProperties: true,
+    removeConsole: true,
   },
   images:{
     remotePatterns: [
@@ -16,6 +20,6 @@ ignoreBuildErrors: true,
       },
     ],
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

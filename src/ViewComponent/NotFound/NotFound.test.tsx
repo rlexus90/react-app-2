@@ -1,47 +1,13 @@
-// import { it, expect } from 'vitest';
-// import { render, screen } from '@testing-library/react';
-// import { RouterProvider, createMemoryRouter } from 'react-router-dom';
-// import '@testing-library/jest-dom';
-// import MoreInfo from '../Modal/MoreInfo';
-// import App from '../../../prew_V/src/App';
-// import NotFound from './NotFound';
-// import { Provider } from 'react-redux';
-// import { setupStore } from '../../../prew_V/src/store/store';
-// import { server } from '../../mock/api/server';
+import { expect, it, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import NotFoundPage from '@/pages/404';
 
-// const store = setupStore();
-// server.events.on('request:start', ({ request }) => {
-//   console.log('MSW intercepted:', request.method, request.url);
-// });
+vi.mock('next/router', () => import('next-router-mock'));
 
-// it('Test not found page', async () => {
-//   const rote = createMemoryRouter(
-//     [
-//       {
-//         path: '/',
-//         element: <App />,
-//         children: [
-//           {
-//             path: ':id',
-//             element: <MoreInfo />,
-//           },
-//         ],
-//       },
-//       {
-//         path: '*',
-//         element: <NotFound />,
-//       },
-//     ],
-//     {
-//       initialEntries: ['/wrong'],
-//     }
-//   );
-//   render(
-//     <Provider store={store}>
-//       <RouterProvider router={rote} />
-//     </Provider>
-//   );
+it('Test not found page', async () => {
+  const { rerender } = render(<NotFoundPage />);
 
-//   const text = await screen.findByText('Sorry... Page not found');
-//   expect(text).toBeInTheDocument();
-// });
+  const text = await screen.findByText('Sorry... Page not found');
+  expect(text).toBeInTheDocument();
+});

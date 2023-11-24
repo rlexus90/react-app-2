@@ -2,7 +2,7 @@ import style from './Main.module.scss';
 import noImg from '../../../public/no_image.jpg';
 import { NavPanel } from '@/component/NavPanel/NavPanel';
 import { FC } from 'react';
-import { Film, RequestAns, RequestAnsOneFilm, RespParam } from '@/types/types';
+import { Film, RequestAns } from '@/types/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -19,7 +19,6 @@ export const Main: FC<{ filmsAns: RequestAns; film?: Film }> = ({
   const url = new URLSearchParams(
     query as unknown as URLSearchParams
   ).toString();
-  // console.log(url)
 
   return (
     <>
