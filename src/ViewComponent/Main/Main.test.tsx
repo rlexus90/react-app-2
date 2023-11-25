@@ -1,20 +1,13 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { findByRole, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { server } from '../../mock/api/server';
-import { HttpResponse, http } from 'msw';
-import { emptyResp } from '../../mock/respMock';
-import { setupServer } from 'msw/node';
 import Home from '@/pages/index';
 import { ErrorBoundary } from 'react-error-boundary';
 import { FallbackRender } from '@/component/ErrorBoundary/FallbackRender';
 import { filmApi } from '@/controler/FilmAPI';
 
 vi.mock('next/router', () => import('next-router-mock'));
-
-server.events.on('request:start', ({ request }) => {
-  console.log('MSW intercepted:', request.method, request.url);
-});
 
 describe('test main component', () => {
   beforeEach(async () => {
@@ -59,5 +52,22 @@ describe('message when no response data', () => {
     );
     const el = await screen.findByText('Nothing found!');
     expect(el).toBeInTheDocument();
+  });
+});
+
+describe('Snapshot testing', () => {
+  it('Test', async () => {
+    const filmsAns = await filmApi.getFilmsPage({});
+    const div = document.createElement('div');
+    const { container } = render(
+      <ErrorBoundary fallbackRender={FallbackRender}>
+        <Home {...filmsAns} />
+      </ErrorBoundary>,
+      {
+        container: document.body.appendChild(div),
+      }
+    );
+
+    expect(container).toMatchSnapshot();
   });
 });

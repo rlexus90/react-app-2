@@ -35,3 +35,21 @@ describe('test main component', () => {
     expect(url1).equal(url3);
   });
 });
+
+describe('Snapshot testing', () => {
+  it('Test', async () => {
+    const filmsAns = await filmApi.getFilmsPage({});
+    const film = await filmApi.getFilm('tt21361444');
+    const div = document.createElement('div');
+    const { container } = render(
+      <ErrorBoundary fallbackRender={FallbackRender}>
+        <Home filmsAns={filmsAns} film={film} />
+      </ErrorBoundary>,
+      {
+        container: document.body.appendChild(div),
+      }
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+});
