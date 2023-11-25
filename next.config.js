@@ -4,10 +4,6 @@ const nextConfig = {
   typescript:{
     ignoreBuildErrors: true,
   },
-  compiler: {
-    reactRemoveProperties: true,
-    removeConsole: true,
-  },
   images:{
     remotePatterns: [
       {
