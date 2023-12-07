@@ -44,8 +44,8 @@ export const Main: FC<{ filmsAns: RequestAns; film?: Film }> = ({
                     >
                       <Image
                         className={style.image}
-                        width={el.primaryImage ? el.primaryImage.width : 200}
-                        height={el.primaryImage ? el.primaryImage.height : 200}
+                        width={el.primaryImage ? el.primaryImage.width : 300}
+                        height={el.primaryImage ? el.primaryImage.height : 300}
                         src={el.primaryImage ? el.primaryImage.url : noImg}
                         alt={
                           el.primaryImage
