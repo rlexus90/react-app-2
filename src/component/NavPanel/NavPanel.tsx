@@ -1,64 +1,51 @@
-import { Dispatch, SyntheticEvent } from 'react';
-import { RequestAns, RespParam } from '../../types/types';
-import { queryToAPI } from '../../utils/utils';
+import { FC, SyntheticEvent } from 'react';
 import style from './NavPanel.module.scss';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation';
+import { RespParam } from '@/types/types';
+import { ParsedUrlQuery } from 'querystring';
 
-type NavPanelProps = {
-  filmResp: RequestAns | undefined;
-  setFilmResp: Dispatch<RequestAns | undefined>;
-  respParam: RespParam;
-  setIsFilmLoad: Dispatch<boolean>;
-};
+export const NavPanel: FC<{
+  page: number;
+  next: string | undefined;
+}> = ({ page, next }) => {
+  const router = useRouter();
+  const query = router.query as RespParam;
 
-export default function NavPanel({
-  filmResp,
-  setFilmResp,
-  respParam,
-  setIsFilmLoad,
-}: NavPanelProps) {
-  const currentPage = filmResp ? filmResp.page : '';
-
-  const prewPage = async (event: SyntheticEvent) => {
+  const prewPage = (event: SyntheticEvent) => {
     event.preventDefault();
-    setIsFilmLoad(false);
-    if (filmResp?.page === 1 || !filmResp?.page) return;
-    const page = await queryToAPI({
-      ...respParam,
-      page: String(filmResp?.page - 1),
-    });
-    if (page) setFilmResp(page);
-    setIsFilmLoad(true);
+    if (page === 1 || !page) return;
+    const newPage = +page - 1;
+    query.page = newPage.toString();
+    router.push({ pathname: '/', query: query as ParsedUrlQuery });
   };
 
   const nextPage = async (event: SyntheticEvent) => {
     event.preventDefault();
-    setIsFilmLoad(false);
-    if (!filmResp?.next) return;
-    const page = await queryToAPI({
-      ...respParam,
-      page: String(+filmResp.page + 1),
-    });
-    if (page) setFilmResp(page);
-    setIsFilmLoad(true);
+    if (!next || !page) return;
+    const newPage = +page + 1;
+    query.page = newPage.toString();
+    router.push({ pathname: '/', query: query as ParsedUrlQuery });
   };
 
   return (
     <nav className={style.nav}>
-      <a
+      <Link
         href="#"
-        className={filmResp?.page == 1 ? style.disabled : ' '}
+        className={page == 1 ? style.disabled : ' '}
         onClick={prewPage}
       >
         prew
-      </a>
-      <p>{currentPage}</p>
-      <a
+      </Link>
+      <p>{page}</p>
+      <Link
         href="#"
-        className={!filmResp?.next ? style.disabled : ' '}
+        className={!next ? style.disabled : ' '}
         onClick={nextPage}
       >
         next
-      </a>
+      </Link>
     </nav>
   );
-}
+};

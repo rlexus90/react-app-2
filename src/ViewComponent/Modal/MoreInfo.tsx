@@ -1,32 +1,49 @@
-import { Navigate, useLoaderData, useNavigate } from 'react-router-dom';
+import { Film, RequestAnsOneFilm, RespParam } from '@/types/types';
 import styles from './MoreInfo.module.scss';
-import { Film, RequestAns } from '../../types/types';
-import noImg from '/no_image.jpg';
+import noImg from '../../../public/no_image.jpg';
+import { Loader } from '@/component/Loader/Loader';
+import { FC } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 
-export default function MoreInfo() {
-  const data = useLoaderData() as RequestAns;
-  const film = data.results as unknown as Film;
-  const navigate = useNavigate();
+export const MoreInfo: FC<{ film: Film }> = ({ film }) => {
+  const router = useRouter();
+  const query: RespParam = router.query;
+  delete query.id;
+  const url = new URLSearchParams(
+    query as unknown as URLSearchParams
+  ).toString();
 
-  if (!film) return <Navigate to="*" />;
+  if (!film) return router.push('/');
 
   const returnBack = () => {
-    navigate('/');
+    router.replace(`/?${url}`);
   };
 
   return (
-    <div className={styles.modal} onClick={returnBack}>
-      <div className={styles.wrapper}>
-        <img
-          className={styles.image}
-          src={film.primaryImage ? film.primaryImage.url : noImg}
-          alt={
-            film.primaryImage ? film.primaryImage.caption.plainText : 'No Image'
-          }
-        />
-        <p>{film.originalTitleText.text}</p>
-        <p>Year: {film.releaseYear?.year}</p>
+    <>
+      <div
+        className={styles.modal}
+        onClick={returnBack}
+        data-testid="more-info"
+      >
+        <div className={styles.wrapper}>
+          <Image
+            width={650}
+            height={900}
+            layout="responsive"
+            className={styles.image}
+            src={film?.primaryImage ? film.primaryImage.url : noImg}
+            alt={
+              film?.primaryImage
+                ? film.primaryImage.caption.plainText
+                : 'No Image'
+            }
+          />
+          <p>{film?.originalTitleText.text}</p>
+          <p>Year: {film?.releaseYear?.year}</p>
+        </div>
       </div>
-    </div>
+    </>
   );
-}
+};

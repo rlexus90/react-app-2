@@ -1,13 +1,18 @@
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import styles from './NotFound.module.scss';
 
 export default function NotFound() {
-  const navigate = useNavigate();
+  const timer = setTimeout(() => {
+    clearTimeout(timer);
+    router.push('/');
+  }, 3000);
+
+  const router = useRouter();
   return (
     <div
       className={styles.notFound}
       onClick={() => {
-        navigate('/');
+        router.push('/');
       }}
     >
       <h1>Sorry... Page not found</h1>

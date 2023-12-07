@@ -1,14 +1,8 @@
-module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
-    'prettier',
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
+module.exports = {root: true,
+env: { "browser": true, "es2020": true },
+  extends: ["next/core-web-vitals", "prettier"],
+	ignorePatterns: ['dist', '.eslintrc.cjs'],
+	parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -22,7 +16,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
+	plugins: ['@typescript-eslint', 'react', 'react-hooks'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'off',
@@ -38,6 +32,8 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+		'no-extra-semi':2,
+		semi: 2,
   },
   settings: {
     react: {
@@ -45,4 +41,4 @@ module.exports = {
       version: 'detect',
     },
   },
-};
+}

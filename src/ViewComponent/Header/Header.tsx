@@ -1,37 +1,33 @@
-import { Dispatch, KeyboardEvent, ChangeEvent } from 'react';
+import { KeyboardEvent, ChangeEvent, useEffect, FC, useRef } from 'react';
 import styles from './Header.module.scss';
-import { RequestAns, RespParam } from '../../types/types';
-import { queryToAPI } from '../../utils/utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBomb } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router';
+import { RespParam } from '@/types/types';
+import { useErrorBoundary } from 'react-error-boundary';
+import { ParsedUrlQuery } from 'querystring';
 
-type HeaderProps = {
-  respParam: RespParam;
-  setFilmResp: Dispatch<RequestAns | undefined>;
-  setRespParam: Dispatch<RespParam>;
-  setIsFilmLoad: Dispatch<boolean>;
-};
+export const Header: FC = () => {
+  const router = useRouter();
+  const query: RespParam = router.query;
+  const input = useRef<HTMLInputElement>(null);
+  const { showBoundary } = useErrorBoundary();
 
-function Header({
-  respParam,
-  setFilmResp,
-  setRespParam,
-  setIsFilmLoad,
-}: HeaderProps) {
+  useEffect(() => {
+    const text = localStorage.getItem('searchValue');
+
+    if (text && input.current) input.current.value = text;
+  });
+
   const saveSearchValue = () => {
-    if (respParam?.searchValue)
-      localStorage.setItem('searchValue', respParam.searchValue);
-  };
-
-  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setRespParam({ ...respParam, searchValue: value });
+    localStorage.setItem('searchValue', query.search as string);
   };
 
   const buttonClick = async () => {
-    setIsFilmLoad(false);
-    const resp = await queryToAPI(respParam);
+    query.search = input.current?.value;
+    query.page = '1';
     saveSearchValue();
-    setFilmResp(resp);
-    setIsFilmLoad(true);
+    router.push({ pathname: '/', query: query as ParsedUrlQuery });
   };
 
   const inputKeyPress = (e: KeyboardEvent) => {
@@ -41,34 +37,50 @@ function Header({
 
   const selectlimit = (e: ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
-    setRespParam({ ...respParam, limit: value });
+    if (!value) return;
+    query.limit = value;
+    router.push({ pathname: '/', query: query as ParsedUrlQuery });
+  };
+  const throwError = () => {
+    showBoundary(Error('Opps!'));
   };
 
   return (
     <div className="header">
       <div className={styles.wrapper}>
+        <FontAwesomeIcon
+          icon={faBomb}
+          onClick={throwError}
+          className={styles.error}
+          data-testid="bug-icon"
+          fade
+        />
         <input
           type="text"
           className={styles.search}
-          value={respParam.searchValue}
-          onChange={onChangeHandler}
+          ref={input}
           onKeyDown={inputKeyPress}
+          data-testid="search-input"
         />
         <button className={styles.btn} onClick={buttonClick}>
           Search
         </button>
-        <select defaultValue={10} onChange={selectlimit}>
+        <select
+          defaultValue={query.limit || 10}
+          onChange={selectlimit}
+          data-testid="select"
+        >
           <option value="6">6</option>
           <option value="9">9</option>
           <option value="10" disabled={true}>
             10
           </option>
           <option value="12">12</option>
-          <option value="16">16</option>
+          <option value="15">15</option>
         </select>
       </div>
     </div>
   );
-}
+};
 
 export default Header;

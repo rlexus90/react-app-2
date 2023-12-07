@@ -1,0 +1,33 @@
+@import './nullstyle';
+
+body {
+  background-color: rgba(216, 216, 216, 0.702);
+}
+
+.error-boundary {
+  margin: 25px;
+  font-size: 30px;
+  text-align: center;
+}
+
+button {
+  margin: 20px 15px;
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.loader {
+  display: none;
+}
+
+.loader.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.657);
+}

@@ -4,13 +4,19 @@
   display: flex;
   font-size: 22px;
   gap: 10px;
+  color: blue;
 
-  a {
-    display: block;
+  a:visited {
+    color: inherit;
   }
-}
 
-.disabled {
-  pointer-events: none;
-  color: grey;
+  a.disabled {
+    pointer-events: none;
+
+    color: grey;
+  }
+
+  p {
+    color: black;
+  }
 }
