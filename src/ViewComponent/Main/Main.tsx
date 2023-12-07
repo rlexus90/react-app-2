@@ -4,7 +4,7 @@ import { NavPanel } from '@/component/NavPanel/NavPanel';
 import { FC } from 'react';
 import { Film, RequestAns } from '@/types/types';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { useRouter } from 'next/router';
 import { MoreInfo } from '../Modal/MoreInfo';
 
@@ -44,9 +44,8 @@ export const Main: FC<{ filmsAns: RequestAns; film?: Film }> = ({
                     >
                       <Image
                         className={style.image}
-                        width={266}
-                        height={380}
-                        layout="responsive"
+                        width={el.primaryImage ? el.primaryImage.width : 200}
+                        height={el.primaryImage ? el.primaryImage.height : 200}
                         src={el.primaryImage ? el.primaryImage.url : noImg}
                         alt={
                           el.primaryImage

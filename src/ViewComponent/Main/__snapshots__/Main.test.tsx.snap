@@ -85,19 +85,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt21361444?"
           >
-            <img
-              alt="Avengers: Secret Wars (2027)"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=3840&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZWE0MjkyNGQtMjgwMS00NGIwLTg5YmEtYThlOTQ1NTZmNWFmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271920%27%20height=%272883%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Avengers: Secret Wars (2027)"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
@@ -113,19 +123,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt21357150?"
           >
-            <img
-              alt="George Lorimer in Avengers: The Kang Dynasty (2026)"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTMyMTMwYTctMjExYi00NTc3LWEwYjAtZWJmODVkZDU1NTZiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=3840&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTMyMTMwYTctMjExYi00NTc3LWEwYjAtZWJmODVkZDU1NTZiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTMyMTMwYTctMjExYi00NTc3LWEwYjAtZWJmODVkZDU1NTZiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTMyMTMwYTctMjExYi00NTc3LWEwYjAtZWJmODVkZDU1NTZiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTMyMTMwYTctMjExYi00NTc3LWEwYjAtZWJmODVkZDU1NTZiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTMyMTMwYTctMjExYi00NTc3LWEwYjAtZWJmODVkZDU1NTZiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTMyMTMwYTctMjExYi00NTc3LWEwYjAtZWJmODVkZDU1NTZiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTMyMTMwYTctMjExYi00NTc3LWEwYjAtZWJmODVkZDU1NTZiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTMyMTMwYTctMjExYi00NTc3LWEwYjAtZWJmODVkZDU1NTZiXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271920%27%20height=%272883%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="George Lorimer in Avengers: The Kang Dynasty (2026)"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
@@ -141,19 +161,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt28477305?"
           >
-            <img
-              alt="Marvel Avengers Campus: Vibranium Crisis (2023)"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNjJmZDYyZWQtYzFlNS00M2IzLThkYWUtYzc5OGU4YWU1YzE2XkEyXkFqcGdeQXVyMjMxODU2ODk%40._V1_.jpg&w=3840&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNjJmZDYyZWQtYzFlNS00M2IzLThkYWUtYzc5OGU4YWU1YzE2XkEyXkFqcGdeQXVyMjMxODU2ODk%40._V1_.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNjJmZDYyZWQtYzFlNS00M2IzLThkYWUtYzc5OGU4YWU1YzE2XkEyXkFqcGdeQXVyMjMxODU2ODk%40._V1_.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNjJmZDYyZWQtYzFlNS00M2IzLThkYWUtYzc5OGU4YWU1YzE2XkEyXkFqcGdeQXVyMjMxODU2ODk%40._V1_.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNjJmZDYyZWQtYzFlNS00M2IzLThkYWUtYzc5OGU4YWU1YzE2XkEyXkFqcGdeQXVyMjMxODU2ODk%40._V1_.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNjJmZDYyZWQtYzFlNS00M2IzLThkYWUtYzc5OGU4YWU1YzE2XkEyXkFqcGdeQXVyMjMxODU2ODk%40._V1_.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNjJmZDYyZWQtYzFlNS00M2IzLThkYWUtYzc5OGU4YWU1YzE2XkEyXkFqcGdeQXVyMjMxODU2ODk%40._V1_.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNjJmZDYyZWQtYzFlNS00M2IzLThkYWUtYzc5OGU4YWU1YzE2XkEyXkFqcGdeQXVyMjMxODU2ODk%40._V1_.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNjJmZDYyZWQtYzFlNS00M2IzLThkYWUtYzc5OGU4YWU1YzE2XkEyXkFqcGdeQXVyMjMxODU2ODk%40._V1_.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%273508%27%20height=%274961%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Marvel Avengers Campus: Vibranium Crisis (2023)"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
@@ -169,19 +199,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt28477867?"
           >
-            <img
-              alt="LEGO Marvel Avengers: Code Red (2023)"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWFiNDBkZGUtZmQzZS00N2Q3LWI1MjItZmJiMjg3YTZjYjk4XkEyXkFqcGdeQXVyNTc4MjczMTM%40._V1_.jpg&w=3840&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWFiNDBkZGUtZmQzZS00N2Q3LWI1MjItZmJiMjg3YTZjYjk4XkEyXkFqcGdeQXVyNTc4MjczMTM%40._V1_.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWFiNDBkZGUtZmQzZS00N2Q3LWI1MjItZmJiMjg3YTZjYjk4XkEyXkFqcGdeQXVyNTc4MjczMTM%40._V1_.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWFiNDBkZGUtZmQzZS00N2Q3LWI1MjItZmJiMjg3YTZjYjk4XkEyXkFqcGdeQXVyNTc4MjczMTM%40._V1_.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWFiNDBkZGUtZmQzZS00N2Q3LWI1MjItZmJiMjg3YTZjYjk4XkEyXkFqcGdeQXVyNTc4MjczMTM%40._V1_.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWFiNDBkZGUtZmQzZS00N2Q3LWI1MjItZmJiMjg3YTZjYjk4XkEyXkFqcGdeQXVyNTc4MjczMTM%40._V1_.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWFiNDBkZGUtZmQzZS00N2Q3LWI1MjItZmJiMjg3YTZjYjk4XkEyXkFqcGdeQXVyNTc4MjczMTM%40._V1_.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWFiNDBkZGUtZmQzZS00N2Q3LWI1MjItZmJiMjg3YTZjYjk4XkEyXkFqcGdeQXVyNTc4MjczMTM%40._V1_.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWFiNDBkZGUtZmQzZS00N2Q3LWI1MjItZmJiMjg3YTZjYjk4XkEyXkFqcGdeQXVyNTc4MjczMTM%40._V1_.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27864%27%20height=%271280%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="LEGO Marvel Avengers: Code Red (2023)"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
@@ -197,19 +237,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt15608590?"
           >
-            <img
-              alt="No image"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=%2Fpublic%2Fno_image.jpg&w=3840&q=75"
-              srcset="/_next/image?url=%2Fpublic%2Fno_image.jpg&w=640&q=75 640w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=750&q=75 750w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=828&q=75 828w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="No image"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
@@ -225,19 +275,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt16531868?"
           >
-            <img
-              alt="Lego Marvel Avengers: Time Twisted (2022)"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MzNzFhZTgtNjgzMC00MjEyLWFlOTItZWI3MmU2ZDMwNWFlXkEyXkFqcGdeQXVyMTQ4NjY4ODU3._V1_.jpg&w=3840&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MzNzFhZTgtNjgzMC00MjEyLWFlOTItZWI3MmU2ZDMwNWFlXkEyXkFqcGdeQXVyMTQ4NjY4ODU3._V1_.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MzNzFhZTgtNjgzMC00MjEyLWFlOTItZWI3MmU2ZDMwNWFlXkEyXkFqcGdeQXVyMTQ4NjY4ODU3._V1_.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MzNzFhZTgtNjgzMC00MjEyLWFlOTItZWI3MmU2ZDMwNWFlXkEyXkFqcGdeQXVyMTQ4NjY4ODU3._V1_.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MzNzFhZTgtNjgzMC00MjEyLWFlOTItZWI3MmU2ZDMwNWFlXkEyXkFqcGdeQXVyMTQ4NjY4ODU3._V1_.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MzNzFhZTgtNjgzMC00MjEyLWFlOTItZWI3MmU2ZDMwNWFlXkEyXkFqcGdeQXVyMTQ4NjY4ODU3._V1_.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MzNzFhZTgtNjgzMC00MjEyLWFlOTItZWI3MmU2ZDMwNWFlXkEyXkFqcGdeQXVyMTQ4NjY4ODU3._V1_.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MzNzFhZTgtNjgzMC00MjEyLWFlOTItZWI3MmU2ZDMwNWFlXkEyXkFqcGdeQXVyMTQ4NjY4ODU3._V1_.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MzNzFhZTgtNjgzMC00MjEyLWFlOTItZWI3MmU2ZDMwNWFlXkEyXkFqcGdeQXVyMTQ4NjY4ODU3._V1_.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271175%27%20height=%271763%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Lego Marvel Avengers: Time Twisted (2022)"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
@@ -253,19 +313,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt18183576?"
           >
-            <img
-              alt="Avengers: Rise of the Villains (2022)"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BOTU3ZTEwM2QtZjNlMy00YWU5LWJjMmItZWVjZTU1MTBhZTEwXkEyXkFqcGdeQXVyNzEyMjMyODQ%40._V1_.jpg&w=3840&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BOTU3ZTEwM2QtZjNlMy00YWU5LWJjMmItZWVjZTU1MTBhZTEwXkEyXkFqcGdeQXVyNzEyMjMyODQ%40._V1_.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BOTU3ZTEwM2QtZjNlMy00YWU5LWJjMmItZWVjZTU1MTBhZTEwXkEyXkFqcGdeQXVyNzEyMjMyODQ%40._V1_.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BOTU3ZTEwM2QtZjNlMy00YWU5LWJjMmItZWVjZTU1MTBhZTEwXkEyXkFqcGdeQXVyNzEyMjMyODQ%40._V1_.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BOTU3ZTEwM2QtZjNlMy00YWU5LWJjMmItZWVjZTU1MTBhZTEwXkEyXkFqcGdeQXVyNzEyMjMyODQ%40._V1_.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BOTU3ZTEwM2QtZjNlMy00YWU5LWJjMmItZWVjZTU1MTBhZTEwXkEyXkFqcGdeQXVyNzEyMjMyODQ%40._V1_.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BOTU3ZTEwM2QtZjNlMy00YWU5LWJjMmItZWVjZTU1MTBhZTEwXkEyXkFqcGdeQXVyNzEyMjMyODQ%40._V1_.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BOTU3ZTEwM2QtZjNlMy00YWU5LWJjMmItZWVjZTU1MTBhZTEwXkEyXkFqcGdeQXVyNzEyMjMyODQ%40._V1_.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BOTU3ZTEwM2QtZjNlMy00YWU5LWJjMmItZWVjZTU1MTBhZTEwXkEyXkFqcGdeQXVyNzEyMjMyODQ%40._V1_.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271920%27%20height=%271080%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Avengers: Rise of the Villains (2022)"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
@@ -281,19 +351,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt14764600?"
           >
-            <img
-              alt="No image"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=%2Fpublic%2Fno_image.jpg&w=3840&q=75"
-              srcset="/_next/image?url=%2Fpublic%2Fno_image.jpg&w=640&q=75 640w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=750&q=75 750w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=828&q=75 828w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fpublic%2Fno_image.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="No image"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
@@ -309,19 +389,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt15554674?"
           >
-            <img
-              alt="Avengers: The Random Story (2021)"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWUxZjgzODctODcyNy00NDI5LTkyMjMtYTMyMTNmNjYzOTVmXkEyXkFqcGdeQXVyMTIzODE5MTk1._V1_.jpg&w=3840&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWUxZjgzODctODcyNy00NDI5LTkyMjMtYTMyMTNmNjYzOTVmXkEyXkFqcGdeQXVyMTIzODE5MTk1._V1_.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWUxZjgzODctODcyNy00NDI5LTkyMjMtYTMyMTNmNjYzOTVmXkEyXkFqcGdeQXVyMTIzODE5MTk1._V1_.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWUxZjgzODctODcyNy00NDI5LTkyMjMtYTMyMTNmNjYzOTVmXkEyXkFqcGdeQXVyMTIzODE5MTk1._V1_.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWUxZjgzODctODcyNy00NDI5LTkyMjMtYTMyMTNmNjYzOTVmXkEyXkFqcGdeQXVyMTIzODE5MTk1._V1_.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWUxZjgzODctODcyNy00NDI5LTkyMjMtYTMyMTNmNjYzOTVmXkEyXkFqcGdeQXVyMTIzODE5MTk1._V1_.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWUxZjgzODctODcyNy00NDI5LTkyMjMtYTMyMTNmNjYzOTVmXkEyXkFqcGdeQXVyMTIzODE5MTk1._V1_.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWUxZjgzODctODcyNy00NDI5LTkyMjMtYTMyMTNmNjYzOTVmXkEyXkFqcGdeQXVyMTIzODE5MTk1._V1_.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BYWUxZjgzODctODcyNy00NDI5LTkyMjMtYTMyMTNmNjYzOTVmXkEyXkFqcGdeQXVyMTIzODE5MTk1._V1_.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271999%27%20height=%271125%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="Avengers: The Random Story (2021)"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
@@ -337,19 +427,29 @@ exports[`Snapshot testing > Test 1`] = `
             class="_more_a3cc34"
             href="details/tt21072140?"
           >
-            <img
-              alt="LEGO Marvel Avengers: Loki in Training (2021)"
-              class="_image_a3cc34"
-              data-nimg="1"
-              decoding="async"
-              height="380"
-              loading="lazy"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMjM0MDQ4YTItODM5MS00MjM3LWIyYmQtM2Y2YTkxMGQyMWYzXkEyXkFqcGdeQXVyNTg3MjA4NDc%40._V1_.jpg&w=3840&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMjM0MDQ4YTItODM5MS00MjM3LWIyYmQtM2Y2YTkxMGQyMWYzXkEyXkFqcGdeQXVyNTg3MjA4NDc%40._V1_.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMjM0MDQ4YTItODM5MS00MjM3LWIyYmQtM2Y2YTkxMGQyMWYzXkEyXkFqcGdeQXVyNTg3MjA4NDc%40._V1_.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMjM0MDQ4YTItODM5MS00MjM3LWIyYmQtM2Y2YTkxMGQyMWYzXkEyXkFqcGdeQXVyNTg3MjA4NDc%40._V1_.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMjM0MDQ4YTItODM5MS00MjM3LWIyYmQtM2Y2YTkxMGQyMWYzXkEyXkFqcGdeQXVyNTg3MjA4NDc%40._V1_.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMjM0MDQ4YTItODM5MS00MjM3LWIyYmQtM2Y2YTkxMGQyMWYzXkEyXkFqcGdeQXVyNTg3MjA4NDc%40._V1_.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMjM0MDQ4YTItODM5MS00MjM3LWIyYmQtM2Y2YTkxMGQyMWYzXkEyXkFqcGdeQXVyNTg3MjA4NDc%40._V1_.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMjM0MDQ4YTItODM5MS00MjM3LWIyYmQtM2Y2YTkxMGQyMWYzXkEyXkFqcGdeQXVyNTg3MjA4NDc%40._V1_.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMjM0MDQ4YTItODM5MS00MjM3LWIyYmQtM2Y2YTkxMGQyMWYzXkEyXkFqcGdeQXVyNTg3MjA4NDc%40._V1_.jpg&w=3840&q=75 3840w"
-              style="color: transparent; width: 100%; height: auto;"
-              width="266"
-            />
+            <span
+              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%272106%27%20height=%272999%27/%3e"
+                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                />
+              </span>
+              <img
+                alt="LEGO Marvel Avengers: Loki in Training (2021)"
+                class="_image_a3cc34"
+                data-nimg="intrinsic"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
             <p
               class="_name_a3cc34"
             >
